@@ -3,7 +3,6 @@
 
     constructor() {
         this.entries[0] = dummyData;
-        
     }
 }
 
@@ -32,7 +31,7 @@ let prizes: Array<string> = ["Pppp"];
 let rewards: Array<string> = ["Rewards"];
 
 var dummyData = new Entry("17th", players);
-var dummyData2 = new Entry("24th", rewards);
+//var dummyData2 = new Entry("24th", rewards);
 
 //var dummyData: Array<Entry> = [
 //    new Entry("17th")

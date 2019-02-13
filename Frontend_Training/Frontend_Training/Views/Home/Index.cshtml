@@ -8,7 +8,29 @@
         <div v-for="entry in dummyData" class="holiday-card">
             <div class="card-title">
                 <h1>{{entry.date }}</h1>
-                <h2>{{entry.players }} </h2>
+            </div>
+            <div>
+                <div class="col-lg-6">
+                    Players
+
+                    <div v-for="player in entry.players"  class="players-container">
+                        <h4>{{player}}</h4>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    Prizes
+                    <div class="standings-container">
+                        Display prices per person
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col-lg-6">
+                    <div class="btn btn-primary">Show Rewards</div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="btn btn-primary">Enter</div> 
+                </div>
             </div>
         </div>
     </div>

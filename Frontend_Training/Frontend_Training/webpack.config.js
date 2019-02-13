@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
     context: path.join(__dirname, 'wwwroot'),
     entry: {
-        App: './js/main.js',
+        App: './js/main.js' 
     },
     watch: true,
     watchOptions: {

@@ -20,5 +20,4 @@ var players = ["Pppp"];
 var prizes = ["Pppp"];
 var rewards = ["Rewards"];
 var dummyData = new Entry("17th", players);
-var dummyData2 = new Entry("24th", rewards);
 //# sourceMappingURL=DummyData.js.map
