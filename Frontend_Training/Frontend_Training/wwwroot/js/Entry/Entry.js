@@ -29,6 +29,8 @@ var Entry = (function () {
         };
         this.generateStandings = function (standings) {
             var labels = {};
+            labels[0] = "1st";
+            labels[1] = "2nd";
             labels[2] = "Semis";
             labels[4] = "Quarter";
             labels[8] = "RO 16";
@@ -38,20 +40,33 @@ var Entry = (function () {
             labels[128] = "RO 256";
             labels[256] = "RO 512";
             var proportion = {};
-            proportion[2] = 0.4;
-            proportion[4] = 0.2;
-            proportion[8] = 0.1;
+            proportion[0] = 0.4;
+            proportion[1] = 0.3;
+            proportion[2] = 0.2;
+            proportion[4] = 0.1;
+            proportion[8] = 0.0;
             proportion[16] = 0;
             proportion[32] = 0;
             proportion[64] = 0;
             proportion[128] = 0;
             proportion[256] = 0;
             var recipientsForEachBracket = this.bracketSize / 2;
-            var labelExistance = standings.find(function (label) { return label.recipientLabel == labels[recipientsForEachBracket]; });
-            if (labelExistance)
-                return;
-            var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, proportion[recipientsForEachBracket]);
-            standings.push(newRecipient);
+            if (recipientsForEachBracket == 1) {
+                var labelExistance = standings.find(function (label) { return label.recipientLabel == labels[recipientsForEachBracket]; });
+                if (labelExistance)
+                    return;
+                var first = new PriceAllocator("1st", 1, proportion[0]);
+                var second = new PriceAllocator("2nd", 1, proportion[1]);
+                standings.push(first);
+                standings.push(second);
+            }
+            else {
+                var labelExistance = standings.find(function (label) { return label.recipientLabel == labels[recipientsForEachBracket]; });
+                if (labelExistance)
+                    return;
+                var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, proportion[recipientsForEachBracket]);
+                standings.push(newRecipient);
+            }
         };
         this.date = date;
         this.players = players;

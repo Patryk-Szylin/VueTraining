@@ -6,7 +6,6 @@ var dummyData = new DummyData();
 var app = new Vue({
     el: '#app',
     data: {
-        message: "Hello Vue",
         entriesData: dummyData.entries,
         totalPrizePool: dummyData.entries[0].totalPrizePool
     },
