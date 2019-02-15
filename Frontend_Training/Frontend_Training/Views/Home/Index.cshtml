@@ -5,32 +5,40 @@
 
 <div id="app" class="row">
     <div class="entries-container">
-        <div v-for="entry in dummyData" class="holiday-card">
-            <div class="card-title">
+        <div v-for="entry in entriesData">
+            <div class="entry-title">
                 <h1>{{entry.date }}</h1>
             </div>
-            <div>
-                <div class="col-lg-6">
-                    Players
-
-                    <div v-for="player in entry.players"  class="players-container">
-                        <h4>{{player}}</h4>
+            <div class="entries-content ">
+                <div class="col-lg-5 players-container">
+                    <div class="container-title">
+                        Participants
+                    </div>
+                    <div v-for="player in entry.players">
+                        <div>{{player}}</div>
+                    </div>
+                </div>    
+                <div class="col-lg-2">
+                    <div>
+                        {{entry.totalPrizePool}}
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    Prizes
-                    <div class="standings-container">
-                        Display prices per person
+                <div class="col-lg-5 standings-container">
+                    <div class="container-title">
+                        Prizes
+                    </div>
+                    <div v-for="team in entry.standings">
+                        {{team}}
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="col-lg-6">
-                    <div class="btn btn-primary">Show Rewards</div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="btn btn-primary">Enter</div> 
-                </div>
+        </div>
+        <div>
+            <div class="col-lg-6">
+                <div class="btn btn-primary">Show Rewards</div>
+            </div>
+            <div class="col-lg-6" v-if="entriesData != undefined">
+                <div v-on:click="addToPlayers()" class="btn btn-primary">Enter</div>
             </div>
         </div>
     </div>

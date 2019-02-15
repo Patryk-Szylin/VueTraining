@@ -5,7 +5,12 @@ var app = new Vue({
     el: '#app',
     data: {
         message: "Hello Vue",
-        dummyData: dummyData.entries
+        entriesData: dummyData.entries
+    },
+    methods: {
+        addToPlayers: function (event) {
+            this.entriesData[0].players.push("Patrick");
+        }
     }
 });
 //# sourceMappingURL=main.js.map

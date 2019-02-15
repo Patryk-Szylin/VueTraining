@@ -23,6 +23,23 @@ body {
 
 
 .container {
-    width: calc(100% - 1200px) !important ;
+    width: calc(100% - 1200px) !important;
 
+    #app {
+        margin-top: 100px;
+    }
+
+    .entries-container {
+        text-align: center;
+
+        .entries-content {
+            height: 350px;
+
+            .container-title {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+    }
 }
+
