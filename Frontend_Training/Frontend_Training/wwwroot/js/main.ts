@@ -13,8 +13,11 @@ var app = new Vue({
     },
     methods: {
         addToPlayers: function (event) {
-            var newCustomer = new Customer(RandomGenerator.getRandomName(), 5);
-            this.entriesData[0].addPlayerToBracket(newCustomer);
+            for (var i = 0; i < 5; i++) {
+                var newCustomer = new Customer(RandomGenerator.getRandomName(), 5);
+                this.entriesData[0].addPlayerToBracket(newCustomer);
+            }
+            
         }
     }
 })

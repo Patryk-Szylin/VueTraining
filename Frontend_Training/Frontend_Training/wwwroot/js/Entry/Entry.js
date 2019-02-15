@@ -44,12 +44,17 @@ var Entry = (function () {
             proportion[1] = 0.3;
             proportion[2] = 0.2;
             proportion[4] = 0.1;
-            proportion[8] = 0.0;
+            proportion[8] = 0;
             proportion[16] = 0;
             proportion[32] = 0;
             proportion[64] = 0;
             proportion[128] = 0;
             proportion[256] = 0;
+            Object.keys(proportion).map(function (key, index) {
+                if (proportion[key] == 0) {
+                    proportion[key] = 2;
+                }
+            });
             var recipientsForEachBracket = this.bracketSize / 2;
             if (recipientsForEachBracket == 1) {
                 var labelExistance = standings.find(function (label) { return label.recipientLabel == labels[recipientsForEachBracket]; });

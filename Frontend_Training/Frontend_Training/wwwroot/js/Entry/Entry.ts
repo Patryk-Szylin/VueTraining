@@ -69,12 +69,20 @@ export class Entry {
         proportion[1] = 0.3;
         proportion[2] = 0.2;
         proportion[4] = 0.1;
-        proportion[8] = 0.0;
+        proportion[8] = 0;
         proportion[16] = 0;
         proportion[32] = 0;
         proportion[64] = 0;
         proportion[128] = 0;
         proportion[256] = 0;
+
+        // Use this to check for anything that has value 0
+        // If it does, assign a reward object to it
+        Object.keys(proportion).map((key, index) => {
+            if (proportion[key] == 0) {
+                proportion[key] = 2;
+            }
+        })
 
 
         var recipientsForEachBracket = this.bracketSize / 2;
