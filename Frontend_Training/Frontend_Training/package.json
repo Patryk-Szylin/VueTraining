@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chance": "^1.0.1",
     "@types/jquery": "^3.3.29",
     "@types/node": "^10.12.21",
+    "chance": "^1.0.18",
     "css-loader": "^2.1.0",
     "ts-loader": "^5.3.3",
     "typescript": "^3.3.1",

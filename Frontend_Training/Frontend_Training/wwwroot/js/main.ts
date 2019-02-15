@@ -1,8 +1,12 @@
 ﻿import Vue from 'vue';
 
+
+
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
+import { RandomGenerator } from "../js/Helpers/RandomGenerator";
 let dummyData = new DummyData();
+
 
 var app = new Vue({
     el: '#app',
@@ -13,7 +17,7 @@ var app = new Vue({
     },
     methods: {
         addToPlayers: function (event) {
-            var newCustomer = new Customer("Patrick", 5);
+            var newCustomer = new Customer(RandomGenerator.getRandomName(), 5);
             this.entriesData[0].addPlayerToBracket(newCustomer);
         }
     }
