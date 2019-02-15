@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\Customer\Customer.ts" />
     <Content Remove="wwwroot\js\Data\DummyData.ts" />
+    <Content Remove="wwwroot\js\Entry\Entry.ts" />
     <Content Remove="wwwroot\js\main.ts" />
   </ItemGroup>
 
@@ -17,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\js\Customer\Customer.ts" />
     <TypeScriptCompile Include="wwwroot\js\Data\DummyData.ts" />
+    <TypeScriptCompile Include="wwwroot\js\Entry\Entry.ts" />
     <TypeScriptCompile Include="wwwroot\js\main.ts" />
   </ItemGroup>
 

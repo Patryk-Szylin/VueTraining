@@ -1,6 +1,7 @@
 ﻿import Vue from 'vue';
 
 import { DummyData } from "./Data/DummyData";
+import { Customer } from "./Customer/Customer";
 let dummyData = new DummyData();
 
 var app = new Vue({
@@ -10,8 +11,9 @@ var app = new Vue({
         entriesData: dummyData.entries    
     },
     methods: {
-        addToPlayers: function(event) {
-            this.entriesData[0].players.push("Patrick");
+        addToPlayers: function (event) {
+            var newCustomer = new Customer("Patrick", 5);
+            this.entriesData[0].addPlayerToBracket(newCustomer);
         }
     }
 })
