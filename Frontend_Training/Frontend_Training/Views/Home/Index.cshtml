@@ -28,7 +28,9 @@
                         Prizes
                     </div>
                     <div v-for="recipient in entry.standings">
-                        {{recipient.label}} : {{(entry.totalPrizePool / recipient.recipients) * recipient.proportion}}
+                        @*{{recipient.label}} : {{(entry.totalPrizePool / recipient.recipients) * recipient.proportion}}*@
+                        {{recipient.recipientLabel}} : {{(entry.totalPrizePool / recipient.noRecipients) * recipient.proportion}}
+
                     </div>
                 </div>
             </div>

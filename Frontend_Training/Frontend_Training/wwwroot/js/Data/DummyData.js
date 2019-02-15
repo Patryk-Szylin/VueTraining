@@ -9,7 +9,7 @@ var DummyData = (function () {
     return DummyData;
 }());
 export { DummyData };
-for (var i = 0; i < 16; i++) {
+for (var i = 0; i < 4; i++) {
     var newPlayer = new Customer("Customer " + i * 2, 5);
     entry.addPlayerToBracket(newPlayer);
 }
