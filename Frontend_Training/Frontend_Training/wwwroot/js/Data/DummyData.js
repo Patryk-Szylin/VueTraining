@@ -9,16 +9,8 @@ var DummyData = (function () {
     return DummyData;
 }());
 export { DummyData };
-for (var i = 0; i < 256; i++) {
+for (var i = 0; i < 16; i++) {
     var newPlayer = new Customer("Customer " + i * 2, 5);
     entry.addPlayerToBracket(newPlayer);
 }
-var stands = {
-    "1st": 12540 * 0.4,
-    "2nd": 0,
-    "Semi Finals": 0,
-    "Quarter Finals": 0,
-    "RO 16": 0,
-    "RO 32": 0
-};
 //# sourceMappingURL=DummyData.js.map

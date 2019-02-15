@@ -8,7 +8,8 @@ var app = new Vue({
     el: '#app',
     data: {
         message: "Hello Vue",
-        entriesData: dummyData.entries    
+        entriesData: dummyData.entries,
+        totalPrizePool: dummyData.entries[0].totalPrizePool
     },
     methods: {
         addToPlayers: function (event) {

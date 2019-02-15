@@ -12,7 +12,7 @@
             <div class="entries-content ">
                 <div class="col-lg-5 players-container">
                     <div class="container-title">
-                        Participants
+                        Participants ({{entry.players.length}})
                     </div>
                     <div v-for="player in entry.players">
                         <div>{{player.name}}</div>
@@ -20,15 +20,15 @@
                 </div>    
                 <div class="col-lg-2">
                     <div>
-                        {{entry.totalPrizePool}}
+                        £ {{entry.totalPrizePool}}
                     </div>
                 </div>
                 <div class="col-lg-5 standings-container">
                     <div class="container-title">
                         Prizes
                     </div>
-                    <div v-for="team in entry.standings">
-                        {{team}}
+                    <div v-for="recipient in entry.standings">
+                        {{recipient.label}} : {{(entry.totalPrizePool / recipient.recipients) * recipient.proportion}}
                     </div>
                 </div>
             </div>

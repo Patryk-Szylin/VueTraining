@@ -1,4 +1,5 @@
 ﻿import { Customer } from "../Customer/Customer";
+import { PriceAllocator } from "../PriceAllocator/PriceAllocator";
 
 export class Entry {
     date: string;
@@ -8,26 +9,29 @@ export class Entry {
     // key = item name
     // value = image, selling price, valuation in the shop
     rewards: Array<string>;
-    totalPrizePool: string;
+    totalPrizePool: number;
     bracketSize: number = 2;
 
-    constructor(date: string,
-        totalPrizePool: number,
-        players?: Array<Customer>,
-        standings?: any,
-        rewards?: Array<string>) {
+    constructor(date: string, totalPrizePool: number, players?: Array<Customer>, standings?: any, rewards?: Array<string>) {
         this.date = date;
         this.players = players;
         this.rewards = rewards;
-        this.totalPrizePool = `£ ${totalPrizePool}`;
+        this.standings = standings;
+        this.totalPrizePool = totalPrizePool;
     }
 
-    displayStandingText = function () {
+    calculateStandings = function (standings: Array<PriceAllocator>) {
         var mapp = [];
+        for (var i = 0; i < standings.length; i++) {
+            var currentStanding = standings[i];
+            mapp.push({
+                label: currentStanding.recipientLabel,
+                recipients: currentStanding.noRecipients,
+                proportion: currentStanding.proportion
+            })
+        }
 
-        Object.keys(this.standings).map(key => {
-            mapp.push({ label: key, price: this.standings[key] })
-        })
+        this.standings = mapp;
     }
 
     addPlayerToBracket = function (player: Customer) {
@@ -41,19 +45,30 @@ export class Entry {
         this.players.forEach(player => {
             this.totalPrizePool += player.entryFee;            
         })
-
-        this.totalPrizePool = `£ ${this.totalPrizePool}`;
     }
 
-    calculateStandingPrices = function () {
 
-    }
+
 
     generateBracketSize = function () {
         if (this.bracketSize < this.players.length) {
             this.bracketSize = this.bracketSize * 2;
             this.generateBracketSize();
         }
-    }
 
+
+        // 16 players
+
+
+        // Update Standings here
+        let standings: Array<PriceAllocator> = new Array<PriceAllocator>();
+        standings.push(new PriceAllocator("1st", 1, 0.4));
+        standings.push(new PriceAllocator("2nd", 1, 0.2));
+        standings.push(new PriceAllocator("Semis", 2, 0.1));
+        standings.push(new PriceAllocator("Quarter", 4, 0.1));
+        standings.push(new PriceAllocator("RO 16", 8, 0));
+        standings.push(new PriceAllocator("RO 32", 16, 0));
+
+        this.calculateStandings(standings);
+    }
 }
