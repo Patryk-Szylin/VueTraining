@@ -50,22 +50,7 @@ export class Entry {
         })
     }
 
-
-
-
     updateStandings = function () {
-
-        // 16 players
-
-        // Update Standings here
-        let standings: Array<PriceAllocator> = new Array<PriceAllocator>();
-        standings.push(new PriceAllocator("1st", 1, 0.4));
-        standings.push(new PriceAllocator("2nd", 1, 0.2));
-        standings.push(new PriceAllocator("Semis", 2, 0.1));
-        standings.push(new PriceAllocator("Quarter", 4, 0.1));
-        standings.push(new PriceAllocator("RO 16", 8, 0));
-        standings.push(new PriceAllocator("RO 32", 16, 0));
-
         this.getStandingPrices();
 
     }
@@ -75,14 +60,10 @@ export class Entry {
             this.bracketSize = this.bracketSize * 2;
             this.generateBracketSize();
         }
-
     }
 
     getStandingPrices = function () {
         this.generateStandings(this.standings);
-
-
-
     }
 
     generateStandings = function (standings) {
@@ -96,15 +77,28 @@ export class Entry {
         labels[128] = "RO 256";
         labels[256] = "RO 512";
 
+        let proportion: { [key: number]: number } = {};
+        proportion[2] = 0.4;
+        proportion[4] = 0.2;
+        proportion[8] = 0.1;
+        proportion[16] = 0;
+        proportion[32] = 0;
+        proportion[64] = 0;
+        proportion[128] = 0;
+        proportion[256] = 0;
+
+
+
         var recipientsForEachBracket = this.bracketSize / 2;
 
-        // If bracket label exists then don't add anymore
+        
         var labelExistance = standings.find(label => label.recipientLabel == labels[recipientsForEachBracket]);
 
+        // If bracket label exists then don't add anymore
         if (labelExistance)
             return;
 
-        var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, 0.4);
+        var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, proportion[recipientsForEachBracket]);
 
         standings.push(newRecipient);
     }

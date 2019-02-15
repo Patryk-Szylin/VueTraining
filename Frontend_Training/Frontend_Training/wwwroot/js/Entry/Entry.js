@@ -16,13 +16,6 @@ var Entry = (function () {
             });
         };
         this.updateStandings = function () {
-            var standings = new Array();
-            standings.push(new PriceAllocator("1st", 1, 0.4));
-            standings.push(new PriceAllocator("2nd", 1, 0.2));
-            standings.push(new PriceAllocator("Semis", 2, 0.1));
-            standings.push(new PriceAllocator("Quarter", 4, 0.1));
-            standings.push(new PriceAllocator("RO 16", 8, 0));
-            standings.push(new PriceAllocator("RO 32", 16, 0));
             this.getStandingPrices();
         };
         this.generateBracketSize = function () {
@@ -44,11 +37,20 @@ var Entry = (function () {
             labels[64] = "RO 128";
             labels[128] = "RO 256";
             labels[256] = "RO 512";
+            var proportion = {};
+            proportion[2] = 0.4;
+            proportion[4] = 0.2;
+            proportion[8] = 0.1;
+            proportion[16] = 0;
+            proportion[32] = 0;
+            proportion[64] = 0;
+            proportion[128] = 0;
+            proportion[256] = 0;
             var recipientsForEachBracket = this.bracketSize / 2;
             var labelExistance = standings.find(function (label) { return label.recipientLabel == labels[recipientsForEachBracket]; });
             if (labelExistance)
                 return;
-            var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, 0.4);
+            var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, proportion[recipientsForEachBracket]);
             standings.push(newRecipient);
         };
         this.date = date;
