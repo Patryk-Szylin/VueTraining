@@ -22,13 +22,26 @@ body {
     margin-top: 100px; }
   .container .entries-container {
     text-align: center; }
+    .container .entries-container .available-rewards-container {
+      position: relative; }
+      .container .entries-container .available-rewards-container .available-rewards-popup {
+        position: absolute;
+        display: none;
+        bottom: 45px;
+        left: 15px;
+        background-color: pink;
+        /*width: 300px;*/
+        max-width: 400px;
+        height: 200px; }
+        .container .entries-container .available-rewards-container .available-rewards-popup .reward-instance {
+          display: inline-block; }
     .container .entries-container .entries-content {
       height: 350px; }
       .container .entries-container .entries-content .container-title {
         font-size: 14px;
         font-weight: bold; }
       .container .entries-container .entries-content .players-container .players-list {
-        height: 400px;
+        height: 300px;
         overflow-y: scroll; }
       .container .entries-container .entries-content .standings-container .standing-element {
         position: relative;

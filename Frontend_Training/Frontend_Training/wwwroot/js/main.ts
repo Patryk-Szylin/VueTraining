@@ -8,7 +8,8 @@ var app = new Vue({
     el: '#app',
     data: {
         entriesData: dummyData.entries,
-        totalPrizePool: dummyData.entries[0].totalPrizePool
+        totalPrizePool: dummyData.entries[0].totalPrizePool,
+        dummyRewards: DummyData.GetDummyRewards()
     },
     methods: {
         addToPlayers: function (event) {
@@ -21,6 +22,7 @@ var app = new Vue({
             let rewardElement = $(event.target).closest(".standing-element");
             let rewardPopup = $(rewardElement).find(".reward-popup");
             let isPopupOpen: boolean = rewardPopup.hasClass("open");
+            let allOpenedPopups: any = $(".reward-popup");
             isPopupOpen = !isPopupOpen;
 
             if (isPopupOpen) {
@@ -30,8 +32,27 @@ var app = new Vue({
             else {
                 rewardElement.find(".reward-popup").css("display", "none");
                 rewardPopup.removeClass("open");
-            }             
+            }           
+        },
+        displayAvailableRewards: function (event) {
+            let availableRewardsContainer = $(event.target).closest(".available-rewards-container");
+            let availableRewardsPopup = availableRewardsContainer.find(".available-rewards-popup");
+            let isPopupOpen: boolean = availableRewardsPopup.hasClass("open");
+
+            console.log("jidsajdi");
+
+            isPopupOpen = !isPopupOpen;
+
+            if (isPopupOpen) {
+                availableRewardsPopup.css("display", "block");
+                availableRewardsPopup.addClass("open");
+            }
+            else {
+                availableRewardsPopup.css("display", "none");
+                availableRewardsPopup.removeClass("open");
+            }
         }
+
     }
 })
 
@@ -79,9 +100,5 @@ function timer() {
 
 $(window).on('load', () => {
     timer();
-})
 
-//$(".view-reward-link").on("click", () => {
-//    console.log("show");
-//    $(".reward-popup").show();
-//})
+})

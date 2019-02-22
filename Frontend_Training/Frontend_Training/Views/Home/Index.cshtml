@@ -48,15 +48,24 @@
                                 Selling Price: {{recipient.proportion.sellingPrice}}
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
         <div>
-            <div class="col-lg-6">
-                <div class="btn btn-primary">Show Rewards</div>
+            <div class="col-lg-6 available-rewards-container">
+                <div class="btn btn-primary" v-on:click="displayAvailableRewards">Show Available Rewards
+                </div>
+                <div class="available-rewards-popup">
+                    <div class="col-lg-2 reward-instance" v-for="reward in dummyRewards">
+                        <div>
+                            <div>{{reward.name }}</div>
+                            <div>{{reward.sellingPrice}}</div>
+                        </div>                        
+                    </div>
+                </div>
+
+
             </div>
             <div class="col-lg-6" v-if="entriesData != undefined">
                 <div v-on:click="addToPlayers()" class="btn btn-primary">Enter</div>
