@@ -27,6 +27,9 @@ body {
       .container .entries-container .entries-content .container-title {
         font-size: 14px;
         font-weight: bold; }
+      .container .entries-container .entries-content .players-container .players-list {
+        height: 400px;
+        overflow-y: scroll; }
       .container .entries-container .entries-content .standings-container .standing-element {
         position: relative;
         user-select: none; }
