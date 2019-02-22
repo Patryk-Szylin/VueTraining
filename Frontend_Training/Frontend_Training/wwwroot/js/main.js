@@ -2,9 +2,7 @@ import Vue from 'vue';
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
-import { EventHandlers } from "../js/Helpers/EventHandlers";
 var dummyData = new DummyData();
-var eventHandlers = new EventHandlers();
 var app = new Vue({
     el: '#app',
     data: {
@@ -16,6 +14,20 @@ var app = new Vue({
             for (var i = 0; i < 5; i++) {
                 var newCustomer = new Customer(RandomGenerator.getRandomName(), 5);
                 this.entriesData[0].addPlayerToBracket(newCustomer);
+            }
+        },
+        displayReward: function (event) {
+            var rewardElement = $(event.target).closest(".standing-element");
+            var rewardPopup = $(rewardElement).find(".reward-popup");
+            var isPopupOpen = rewardPopup.hasClass("open");
+            isPopupOpen = !isPopupOpen;
+            if (isPopupOpen) {
+                rewardElement.find(".reward-popup").css("display", "block");
+                rewardPopup.addClass("open");
+            }
+            else {
+                rewardElement.find(".reward-popup").css("display", "none");
+                rewardPopup.removeClass("open");
             }
         }
     }
@@ -59,6 +71,5 @@ function timer() {
 }
 $(window).on('load', function () {
     timer();
-    eventHandlers.bindEvents();
 });
 //# sourceMappingURL=main.js.map

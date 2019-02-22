@@ -36,15 +36,14 @@
                         </div>
                         <div v-else>
                             {{recipient.recipientLabel}} :
-                            £{{recipient.proportion.sellingPrice}} - <a class="view-reward-link"> View Reward</a>
-                            
-                            <div class="reward-popup">
-                                <div>
-                                    Item: {{recipient.proportion.name}}
-                                </div>
-                                <div>
-                                    Selling Price: {{recipient.proportion.sellingPrice}}
-                                </div>
+                            £{{recipient.proportion.sellingPrice}} - <a v-on:click="displayReward" class="view-reward-link"></a>
+                        </div>
+                        <div class="reward-popup">
+                            <div>
+                                Item: {{recipient.proportion.name}}
+                            </div>
+                            <div>
+                                Selling Price: {{recipient.proportion.sellingPrice}}
                             </div>
                         </div>
 
