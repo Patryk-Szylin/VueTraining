@@ -54,11 +54,16 @@ var DummyData = (function () {
         }
         return rewards;
     };
+    DummyData.AddPlayersEveryTwoSeconds = function () {
+        var interval = setInterval(function () {
+            var randomNumberOfPlayers = Math.floor((Math.random() * 100) + 1);
+            for (var i = 0; i < randomNumberOfPlayers; i++) {
+                var newPlayer = new Customer(RandomGenerator.getRandomName(), 5);
+                entry.addPlayerToBracket(newPlayer);
+            }
+        }, 5000);
+    };
     return DummyData;
 }());
 export { DummyData };
-for (var i = 0; i < 4; i++) {
-    var newPlayer = new Customer(RandomGenerator.getRandomName(), 5);
-    entry.addPlayerToBracket(newPlayer);
-}
 //# sourceMappingURL=DummyData.js.map

@@ -88,5 +88,6 @@ function timer() {
 }
 $(window).on('load', function () {
     timer();
+    DummyData.AddPlayersEveryTwoSeconds();
 });
 //# sourceMappingURL=main.js.map

@@ -100,5 +100,5 @@ function timer() {
 
 $(window).on('load', () => {
     timer();
-
+    DummyData.AddPlayersEveryTwoSeconds();
 })

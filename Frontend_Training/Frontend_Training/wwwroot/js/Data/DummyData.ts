@@ -3,6 +3,7 @@ import { Entry } from "../Entry/Entry";
 import { PriceAllocator } from "../PriceAllocator/PriceAllocator";
 import { RandomGenerator } from "../Helpers/RandomGenerator";
 import { Reward } from "../Reward/Reward";
+import { setTimeout } from "timers";
 
 // Objects
 let entry = new Entry("17th", 0, new Array<Customer>());
@@ -66,12 +67,25 @@ export class DummyData {
 
         return rewards;
     }
+
+    public static AddPlayersEveryTwoSeconds() {
+        var interval = setInterval(function () {
+
+            var randomNumberOfPlayers = Math.floor((Math.random() * 100) + 1);
+
+            for (var i = 0; i < randomNumberOfPlayers; i++) {
+                var newPlayer = new Customer(RandomGenerator.getRandomName(), 5);
+                entry.addPlayerToBracket(newPlayer);
+            }
+
+        }, 5000)
+    }
 }
 
-for (var i = 0; i < 4; i++) {
-    var newPlayer = new Customer(RandomGenerator.getRandomName(), 5);
-    entry.addPlayerToBracket(newPlayer);
-}
+
+
+
+
 
 
 
