@@ -1,4 +1,5 @@
 import { PriceAllocator } from "../PriceAllocator/PriceAllocator";
+import { Reward } from "../Reward/Reward";
 var Entry = (function () {
     function Entry(date, totalPrizePool, players, rewards) {
         this.bracketSize = 2;
@@ -44,15 +45,14 @@ var Entry = (function () {
             proportion[1] = 0.3;
             proportion[2] = 0.2;
             proportion[4] = 0.1;
-            proportion[8] = 0;
-            proportion[16] = 0;
-            proportion[32] = 0;
-            proportion[64] = 0;
-            proportion[128] = 0;
-            proportion[256] = 0;
+            proportion[8] = new Reward("Armor", 40);
+            proportion[16] = new Reward("Armor", 35);
+            proportion[32] = new Reward("Armor", 20);
+            proportion[64] = new Reward("Armor", 25);
+            proportion[128] = new Reward("Armor", 15);
+            proportion[256] = new Reward("Armor", 10);
             Object.keys(proportion).map(function (key, index) {
                 if (proportion[key] == 0) {
-                    proportion[key] = 2;
                 }
             });
             var recipientsForEachBracket = this.bracketSize / 2;

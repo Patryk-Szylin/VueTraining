@@ -5,6 +5,11 @@
     shopValuation: number;
 
 
+    constructor(name: string, sellingPrice: number) {
+        this.name = name;
+        this.sellingPrice = sellingPrice;
+    }
+
     displayProfit = function() {
         return this.shopValuation - 5;
     }

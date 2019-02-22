@@ -2,7 +2,9 @@ import Vue from 'vue';
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
+import { EventHandlers } from "../js/Helpers/EventHandlers";
 var dummyData = new DummyData();
+var eventHandlers = new EventHandlers();
 var app = new Vue({
     el: '#app',
     data: {
@@ -55,5 +57,8 @@ function timer() {
         localStorage.setItem('ss', ss);
     }, 1000);
 }
-window.onload = timer;
+$(window).on('load', function () {
+    timer();
+    eventHandlers.bindEvents();
+});
 //# sourceMappingURL=main.js.map

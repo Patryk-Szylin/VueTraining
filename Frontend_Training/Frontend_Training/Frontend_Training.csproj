@@ -9,8 +9,11 @@
     <Content Remove="wwwroot\js\Customer\Customer.ts" />
     <Content Remove="wwwroot\js\Data\DummyData.ts" />
     <Content Remove="wwwroot\js\Entry\Entry.ts" />
+    <Content Remove="wwwroot\js\Helpers\EventHandlers.ts" />
+    <Content Remove="wwwroot\js\Helpers\RandomGenerator.ts" />
     <Content Remove="wwwroot\js\main.ts" />
     <Content Remove="wwwroot\js\PriceAllocator\PriceAllocator.ts" />
+    <Content Remove="wwwroot\js\Reward\Reward.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,8 +26,11 @@
     <TypeScriptCompile Include="wwwroot\js\Customer\Customer.ts" />
     <TypeScriptCompile Include="wwwroot\js\Data\DummyData.ts" />
     <TypeScriptCompile Include="wwwroot\js\Entry\Entry.ts" />
+    <TypeScriptCompile Include="wwwroot\js\Helpers\EventHandlers.ts" />
+    <TypeScriptCompile Include="wwwroot\js\Helpers\RandomGenerator.ts" />
     <TypeScriptCompile Include="wwwroot\js\main.ts" />
     <TypeScriptCompile Include="wwwroot\js\PriceAllocator\PriceAllocator.ts" />
+    <TypeScriptCompile Include="wwwroot\js\Reward\Reward.ts" />
   </ItemGroup>
 
 </Project>

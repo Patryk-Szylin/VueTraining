@@ -1,1 +1,1 @@
-{"version":3,"file":"Reward.js","sourceRoot":"","sources":["Reward.ts"],"names":[],"mappings":"AAAA;IAAA;QAOI,kBAAa,GAAG;YACZ,OAAO,IAAI,CAAC,aAAa,GAAG,CAAC,CAAC;QAClC,CAAC,CAAA;IACL,CAAC;IAAD,aAAC;AAAD,CAAC,AAVD,IAUC"}
+{"version":3,"file":"Reward.js","sourceRoot":"","sources":["Reward.ts"],"names":[],"mappings":"AAAA;IAOI,gBAAY,IAAY,EAAE,YAAoB;QAK9C,kBAAa,GAAG;YACZ,OAAO,IAAI,CAAC,aAAa,GAAG,CAAC,CAAC;QAClC,CAAC,CAAA;QANG,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,YAAY,GAAG,YAAY,CAAC;IACrC,CAAC;IAKL,aAAC;AAAD,CAAC,AAfD,IAeC"}

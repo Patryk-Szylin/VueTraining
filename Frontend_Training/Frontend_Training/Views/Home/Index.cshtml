@@ -20,7 +20,7 @@
                     <div v-for="player in entry.players">
                         <div>{{player.name}}</div>
                     </div>
-                </div>    
+                </div>
                 <div class="col-lg-2">
                     <div>
                         £ {{entry.totalPrizePool}}
@@ -30,9 +30,24 @@
                     <div class="container-title">
                         Prizes
                     </div>
-                    <div v-for="recipient in entry.standings">
-                        @*{{recipient.label}} : {{(entry.totalPrizePool / recipient.recipients) * recipient.proportion}}*@
-                        {{recipient.recipientLabel}} : {{(entry.totalPrizePool / recipient.noRecipients) * recipient.proportion}}
+                    <div class="standing-element" v-for="recipient in entry.standings">
+                        <div v-if="recipient.proportion > 0">
+                            {{recipient.recipientLabel}} : {{(entry.totalPrizePool / recipient.noRecipients) * recipient.proportion}}
+                        </div>
+                        <div v-else>
+                            {{recipient.recipientLabel}} :
+                            £{{recipient.proportion.sellingPrice}} - <a class="view-reward-link"> View Reward</a>
+                            
+                            <div class="reward-popup">
+                                <div>
+                                    Item: {{recipient.proportion.name}}
+                                </div>
+                                <div>
+                                    Selling Price: {{recipient.proportion.sellingPrice}}
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>

@@ -2,8 +2,9 @@
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
+import { EventHandlers } from "../js/Helpers/EventHandlers";
 let dummyData = new DummyData();
-
+let eventHandlers = new EventHandlers();
 
 var app = new Vue({
     el: '#app',
@@ -16,8 +17,7 @@ var app = new Vue({
             for (var i = 0; i < 5; i++) {
                 var newCustomer = new Customer(RandomGenerator.getRandomName(), 5);
                 this.entriesData[0].addPlayerToBracket(newCustomer);
-            }
-            
+            }            
         }
     }
 })
@@ -64,4 +64,12 @@ function timer() {
     }, 1000)
 }
 
-window.onload = timer;
+$(window).on('load', () => {
+    timer();
+    eventHandlers.bindEvents();
+})
+
+//$(".view-reward-link").on("click", () => {
+//    console.log("show");
+//    $(".reward-popup").show();
+//})

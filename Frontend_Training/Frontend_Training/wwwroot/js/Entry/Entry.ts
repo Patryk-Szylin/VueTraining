@@ -1,5 +1,6 @@
 ﻿import { Customer } from "../Customer/Customer";
 import { PriceAllocator } from "../PriceAllocator/PriceAllocator";
+import { Reward } from "../Reward/Reward";
 
 export class Entry {
     date: string;
@@ -64,23 +65,24 @@ export class Entry {
         labels[256] = "RO 512";
 
         // Create a function that assigns proportions based on players
-        let proportion: { [key: number]: number } = {};
+
+        let proportion: { [key: number]: any } = {};
         proportion[0] = 0.4;
         proportion[1] = 0.3;
         proportion[2] = 0.2;
         proportion[4] = 0.1;
-        proportion[8] = 0;
-        proportion[16] = 0;
-        proportion[32] = 0;
-        proportion[64] = 0;
-        proportion[128] = 0;
-        proportion[256] = 0;
+        proportion[8] = new Reward("Armor", 40);
+        proportion[16] = new Reward("Armor", 35);
+        proportion[32] = new Reward("Armor", 20);
+        proportion[64] = new Reward("Armor", 25);
+        proportion[128] = new Reward("Armor", 15);
+        proportion[256] = new Reward("Armor", 10);
 
         // Use this to check for anything that has value 0
         // If it does, assign a reward object to it
         Object.keys(proportion).map((key, index) => {
             if (proportion[key] == 0) {
-                proportion[key] = 2;
+                //proportion[key] = ;
             }
         })
 

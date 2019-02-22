@@ -27,3 +27,9 @@ body {
       .container .entries-container .entries-content .container-title {
         font-size: 14px;
         font-weight: bold; }
+      .container .entries-container .entries-content .standings-container .standing-element .view-reward-link {
+        text-decoration: underline;
+        color: red;
+        cursor: pointer; }
+      .container .entries-container .entries-content .standings-container .standing-element .reward-popup {
+        display: none; }
