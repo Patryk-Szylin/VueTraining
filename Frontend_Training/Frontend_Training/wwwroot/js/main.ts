@@ -21,7 +21,6 @@ var app = new Vue({
             let rewardElement = $(event.target).closest(".standing-element");
             let rewardPopup = $(rewardElement).find(".reward-popup");
             let isPopupOpen: boolean = rewardPopup.hasClass("open");
-
             isPopupOpen = !isPopupOpen;
 
             if (isPopupOpen) {
