@@ -1,5 +1,6 @@
 var Reward = (function () {
     function Reward(name, sellingPrice, thumbnailPath) {
+        if (thumbnailPath === void 0) { thumbnailPath = ""; }
         this.displayProfit = function () {
             return this.shopValuation - 5;
         };

@@ -54,15 +54,15 @@
         </div>
         <div>
             <div class="col-lg-6 available-rewards-container">
-                <div class="btn btn-primary" v-on:click="displayAvailableRewards">
+                @*<div class="btn btn-primary" v-on:click="displayAvailableRewards">
                     Show Available Rewards
-                </div>
+                </div>*@
                 <div class="available-rewards-popup">
                     <div class="reward-instances-container">
                         <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards">
                             <div>
                                 <div class="reward-thumbnail">
-                                    <img style="width: 50px; height: 50px" v-bind:src="reward.thumbnail" />
+                                    <img v-bind:src="reward.thumbnail" />
                                 </div>
                             </div>
                             <div class="reward-description shadow">
@@ -70,7 +70,7 @@
                                     {{reward.name}}
                                 </div>
                                 <div class="reward-value">
-                                    Valued at: £<span class="reward-price"> {{reward.sellingPrice}} </span>
+                                    Shop price: £<span class="reward-price"> {{reward.sellingPrice}} </span>
                                 </div>
                                 <div class="reward-link-container">
                                     <span class="reward-link">

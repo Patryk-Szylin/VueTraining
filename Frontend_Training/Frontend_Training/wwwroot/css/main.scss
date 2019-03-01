@@ -23,7 +23,7 @@ body {
 
 
 .container {
-    width: calc(100% - 1200px) !important;
+    /*width: calc(100% - 1200px) !important;*/
 
     #app {
         margin-top: 100px;
@@ -36,10 +36,8 @@ body {
             position: relative;
 
             .available-rewards-popup {
-                position: absolute;
-                display: none;
-                bottom: 45px;
-                left: 15px;
+                position: relative;
+                display: block;
                 background-color: pink;
                 height: 200px;
                 width: 460px;
@@ -51,6 +49,13 @@ body {
                     .reward-instance {
                         display: inline-block;
                         height: 100px;
+
+                        .reward-thumbnail {
+                            img {
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
 
                         .reward-description {
                             background-color: navajowhite;

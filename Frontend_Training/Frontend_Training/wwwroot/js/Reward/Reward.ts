@@ -5,7 +5,7 @@
     shopValuation: number;
 
 
-    constructor(name: string, sellingPrice: number, thumbnailPath: string) {
+    constructor(name: string, sellingPrice: number, thumbnailPath: string = "") {
         this.name = name;
         this.sellingPrice = sellingPrice;
         this.thumbnail = thumbnailPath;

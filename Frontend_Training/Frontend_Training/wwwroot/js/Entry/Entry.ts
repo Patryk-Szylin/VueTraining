@@ -71,12 +71,12 @@ export class Entry {
         proportion[1] = 0.3;
         proportion[2] = 0.2;
         proportion[4] = 0.1;
-        //proportion[8] = new Reward("Armor", 40, );
-        //proportion[16] = new Reward("Armor", 35);
-        //proportion[32] = new Reward("Armor", 20);
-        //proportion[64] = new Reward("Armor", 25);
-        //proportion[128] = new Reward("Armor", 15);
-        //proportion[256] = new Reward("Armor", 10);
+        proportion[8] = new Reward("Armor", 40);
+        proportion[16] = new Reward("Armor", 35);
+        proportion[32] = new Reward("Armor", 20);
+        proportion[64] = new Reward("Armor", 25);
+        proportion[128] = new Reward("Armor", 15);
+        proportion[256] = new Reward("Armor", 10);
 
         // Use this to check for anything that has value 0
         // If it does, assign a reward object to it
