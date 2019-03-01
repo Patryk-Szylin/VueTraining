@@ -2,6 +2,8 @@
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
+import * as moment from 'moment';
+
 let dummyData = new DummyData();
 
 var app = new Vue({
@@ -70,48 +72,18 @@ $("img").on("mouseleave", function () {
     
 })
 
-function timer() {
-    let hr: any = localStorage.getItem('hr');
-    let mm: any = localStorage.getItem('mm');
-    let ss: any = localStorage.getItem('ss');
-    if (!hr || !mm || !ss) {
-        hr = "23";
-        mm = "59";
-        ss = "59";
-        localStorage.setItem('hr', hr);
-        localStorage.setItem('mm', mm);
-        localStorage.setItem('ss', ss);
-    }
 
-    var interval = setInterval(function () {
+function updateTime() {
 
-        var zero = 0;
-
-        if (hr == 0 && mm == 0 && ss == 0)
-            clearInterval(interval);
-        ss--;
-        if (ss == zero.toString()) {
-            ss = 59;
-            mm--;
-            if (mm == zero.toString()) {
-                mm = 59;
-                hr--;
-            }
-        }
-
-        if (hr.toString().length < 2) hr = "0" + hr;
-        if (mm.toString().length < 2) mm = "0" + mm;
-        if (ss.toString().length < 2) ss = "0" + ss;
-        $("#contador").html(hr + ":" + mm  + ":" + ss);
-
-        localStorage.setItem('hr', hr);
-        localStorage.setItem('mm', mm);
-        localStorage.setItem('ss', ss);
-
-    }, 1000)
+   
+    //document.documentElement.style.setProperty('--timer-day', "'" + moment().format("dd") + "'");
+    //document.documentElement.style.setProperty('--timer-hours', "'" + moment().format("k") + "'");
+    //document.documentElement.style.setProperty('--timer-minutes', "'" + moment().format("mm") + "'");
+    //document.documentElement.style.setProperty('--timer-seconds', "'" + moment().format("ss") + "'");
+    requestAnimationFrame(updateTime);
 }
 
 $(window).on('load', () => {
-    timer();
+    requestAnimationFrame(updateTime);
     //DummyData.AddPlayersEveryTwoSeconds();
 })

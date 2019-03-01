@@ -61,44 +61,10 @@ $("img").on("mouseleave", function () {
         $(".reward-description").hide();
     });
 });
-function timer() {
-    var hr = localStorage.getItem('hr');
-    var mm = localStorage.getItem('mm');
-    var ss = localStorage.getItem('ss');
-    if (!hr || !mm || !ss) {
-        hr = "23";
-        mm = "59";
-        ss = "59";
-        localStorage.setItem('hr', hr);
-        localStorage.setItem('mm', mm);
-        localStorage.setItem('ss', ss);
-    }
-    var interval = setInterval(function () {
-        var zero = 0;
-        if (hr == 0 && mm == 0 && ss == 0)
-            clearInterval(interval);
-        ss--;
-        if (ss == zero.toString()) {
-            ss = 59;
-            mm--;
-            if (mm == zero.toString()) {
-                mm = 59;
-                hr--;
-            }
-        }
-        if (hr.toString().length < 2)
-            hr = "0" + hr;
-        if (mm.toString().length < 2)
-            mm = "0" + mm;
-        if (ss.toString().length < 2)
-            ss = "0" + ss;
-        $("#contador").html(hr + ":" + mm + ":" + ss);
-        localStorage.setItem('hr', hr);
-        localStorage.setItem('mm', mm);
-        localStorage.setItem('ss', ss);
-    }, 1000);
+function updateTime() {
+    requestAnimationFrame(updateTime);
 }
 $(window).on('load', function () {
-    timer();
+    requestAnimationFrame(updateTime);
 });
 //# sourceMappingURL=main.js.map
