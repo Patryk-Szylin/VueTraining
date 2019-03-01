@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
+import * as moment from 'moment';
 var dummyData = new DummyData();
 var app = new Vue({
     el: '#app',
@@ -62,6 +63,10 @@ $("img").on("mouseleave", function () {
     });
 });
 function updateTime() {
+    document.documentElement.style.setProperty('--timer-day', "'" + moment().format("dd") + "'");
+    document.documentElement.style.setProperty('--timer-hours', "'" + moment().format("k") + "'");
+    document.documentElement.style.setProperty('--timer-minutes', "'" + moment().format("mm") + "'");
+    document.documentElement.style.setProperty('--timer-seconds', "'" + moment().format("ss") + "'");
     requestAnimationFrame(updateTime);
 }
 $(window).on('load', function () {
