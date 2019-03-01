@@ -3,6 +3,7 @@ import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
 import * as moment from 'moment';
+require('moment-countdown');
 
 let dummyData = new DummyData();
 
@@ -72,9 +73,11 @@ $("img").on("mouseleave", function () {
     
 })
 
+// Countdown
+//https://stackoverflow.com/questions/16129157/countdown-timer-using-moment-js
+
 
 function updateTime() {
-
     document.documentElement.style.setProperty('--timer-day', "'" + moment().format("dd") + "'");
     document.documentElement.style.setProperty('--timer-hours', "'" + moment().format("k") + "'");
     document.documentElement.style.setProperty('--timer-minutes', "'" + moment().format("mm") + "'");

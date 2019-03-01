@@ -3,6 +3,7 @@ import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
 import * as moment from 'moment';
+require('moment-countdown');
 var dummyData = new DummyData();
 var app = new Vue({
     el: '#app',
