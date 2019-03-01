@@ -21,7 +21,7 @@
                         <div v-for="player in entry.players">
                             <div>{{player.name}}</div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div class="col-lg-2">
                     <div>
@@ -54,14 +54,36 @@
         </div>
         <div>
             <div class="col-lg-6 available-rewards-container">
-                <div class="btn btn-primary" v-on:click="displayAvailableRewards">Show Available Rewards
+                <div class="btn btn-primary" v-on:click="displayAvailableRewards">
+                    Show Available Rewards
                 </div>
                 <div class="available-rewards-popup">
-                    <div class="col-lg-2 reward-instance" v-for="reward in dummyRewards">
-                        <div>
-                            <div>{{reward.name }}</div>
-                            <div>{{reward.sellingPrice}}</div>
-                        </div>                        
+                    <div class="reward-instances-container">
+                        <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards">
+                            <div>
+                                <div class="reward-thumbnail">
+                                    <img style="width: 50px; height: 50px" v-bind:src="reward.thumbnail" />
+                                </div>
+                            </div>
+                            <div class="reward-description shadow">
+                                <div class="reward-title">
+                                    {{reward.name}}
+                                </div>
+                                <div class="reward-value">
+                                    Valued at: £<span class="reward-price"> {{reward.sellingPrice}} </span>
+                                </div>
+                                <div class="reward-link-container">
+                                    <span class="reward-link">
+                                        <img src="~/images/stretch-icon.png" />
+                                        Preview
+                                    </span>
+                                    <span class="reward-link">
+                                        <img src="~/images/market-icon.png" />
+                                        Market
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

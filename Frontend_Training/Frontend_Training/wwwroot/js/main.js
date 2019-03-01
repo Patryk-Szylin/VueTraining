@@ -8,7 +8,8 @@ var app = new Vue({
     data: {
         entriesData: dummyData.entries,
         totalPrizePool: dummyData.entries[0].totalPrizePool,
-        dummyRewards: DummyData.GetDummyRewards()
+        dummyRewards: DummyData.GetDummyRewards(),
+        paf: './images/instagram-new-filled.png'
     },
     methods: {
         addToPlayers: function (event) {
@@ -49,6 +50,17 @@ var app = new Vue({
         }
     }
 });
+$("img").on("mouseenter", function () {
+    var _this = this;
+    $(this).closest(".reward-instance").find(".reward-description").fadeIn(400, function () {
+        $(_this).find(".reward-description").show();
+    });
+});
+$("img").on("mouseleave", function () {
+    $(this).closest(".reward-instance").on("mouseleave", function () {
+        $(".reward-description").hide();
+    });
+});
 function timer() {
     var hr = localStorage.getItem('hr');
     var mm = localStorage.getItem('mm');
@@ -88,6 +100,5 @@ function timer() {
 }
 $(window).on('load', function () {
     timer();
-    DummyData.AddPlayersEveryTwoSeconds();
 });
 //# sourceMappingURL=main.js.map

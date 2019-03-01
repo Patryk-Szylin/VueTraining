@@ -8,35 +8,43 @@ var numberOfDummyRewards = 8;
 var dummyRewards = [
     {
         name: "Blood Moon Mask",
-        price: 1300
+        price: 30,
+        thumbnail: "./images/Webp.net-resizeimage.jpg"
     },
     {
         name: "Frozen Prince",
-        price: 2540
+        price: 25,
+        thumbnail: "./images/Webp.net-resizeimage.jpg"
     },
     {
         name: "Winter Wonder",
-        price: 1200
+        price: 5,
+        thumbnail: "./images/Webp.net-resizeimage.jpg"
     },
     {
         name: "Snow Man",
-        price: 500
+        price: 5,
+        thumbnail: "./images/Webp.net-resizeimage.jpg"
     },
     {
         name: "Ice King",
-        price: 3000
+        price: 40,
+        thumbnail: "./images/instagram-new-filled.png"
     },
     {
         name: "Ice Queen",
-        price: 3000
+        price: 30,
+        thumbnail: "./images/instagram-new-filled.png"
     },
     {
         name: "Hextech Queen",
-        price: 3250
+        price: 10,
+        thumbnail: "./images/instagram-new-filled.png"
     },
     {
         name: "Hextech King",
-        price: 3250
+        price: 10,
+        thumbnail: "./images/instagram-new-filled.png"
     },
 ];
 var DummyData = (function () {
@@ -48,7 +56,7 @@ var DummyData = (function () {
         for (var i = 0; i < dummyRewards.length; i++) {
             console.log("kapp");
             if (dummyRewards.length > 0) {
-                var newReward = new Reward(dummyRewards[i].name, dummyRewards[i].price);
+                var newReward = new Reward(dummyRewards[i].name, dummyRewards[i].price, dummyRewards[i].thumbnail);
                 rewards.push(newReward);
             }
         }

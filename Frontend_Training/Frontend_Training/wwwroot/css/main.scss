@@ -41,13 +41,52 @@ body {
                 bottom: 45px;
                 left: 15px;
                 background-color: pink;
-                max-width: 400px;
                 height: 200px;
+                width: 460px;
 
-                .reward-instance {
-                    display:inline-block;
+                .reward-instances-container {
+                    padding-top: 20px;
+
+
+                    .reward-instance {
+                        display: inline-block;
+                        height: 100px;
+
+                        .reward-description {
+                            background-color: navajowhite;
+                            display: none;
+                            position: absolute;
+                            top: 55px;
+                            width: 200px;
+                            z-index: 1;
+                            left: -43px;
+                            border-radius: 5px;
+                            padding: 5px;
+                            -webkit-box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
+                            -moz-box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
+                            box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
+
+
+                            .reward-title {
+                            }
+
+                            .reward-value {
+                                margin-bottom: 10px;
+
+                                .reward-price {
+                                    color: orangered;
+                                }
+                            }
+
+                            .reward-link-container {
+                                .reward-link {
+                                    cursor: pointer;
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
                 }
-
             }
         }
 
