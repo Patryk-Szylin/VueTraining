@@ -3,10 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-
-    .container {
-        width: auto !important;
-    }
+    background-color: lightgrey;
 }
 
 /* Wrapping element */
@@ -26,7 +23,7 @@ body {
 
 
 .container {
-    /*width: calc(100% - 1200px) !important;*/
+    width: calc(100% - 320px) !important;
     /*#app {
         margin-top: 100px;
     }*/
@@ -35,13 +32,12 @@ body {
         //https://codepen.io/icebob/pen/JYoQZg/
         //https://codepen.io/eehayman/pen/jVPKpN
         //https://codepen.io/gau/pen/LjQwGp
-
         .entry-title {
-            color:darkorange;
+            color: darkorange;
         }
 
         .entry-prizePool {
-            font-size:18px;
+            font-size: 18px;
             color: #fff;
 
             .prize-label {
@@ -51,10 +47,12 @@ body {
 
         .clock {
             &-container {
-                margin-bottom: 85px;
+                /*margin-bottom: 85px;*/
                 background-color: #080808;
                 border-radius: 0px 0px 5px 5px;
                 padding: 10px;
+                width: calc(100% + 338px);
+                margin-left: -165px;
                 box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);
             }
 
@@ -75,9 +73,9 @@ body {
                 position: relative;
             }
 
-            &-startsIn{
-                font-size:32px;
-                color:#fff;
+            &-startsIn {
+                font-size: 32px;
+                color: #fff;
             }
 
             &-timer {
@@ -161,9 +159,18 @@ body {
             }
         }
 
+        .entry-enterBtn {
+            padding: 6px 100px;
+            font-size: 24px;
+        }
+
         .entries-content {
             height: 350px;
-            margin-left: 26%;
+
+            .container-icon {
+                width: 50px;
+                height: 50px;
+            }
 
             .container-title {
                 font-size: 14px;
@@ -171,6 +178,11 @@ body {
             }
 
             .players-container {
+                background-color: darkgrey;
+                border-radius: 5px;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+                padding: 20px 0px;
+
                 .players-list {
                     height: 300px;
                     overflow-y: scroll;
@@ -178,6 +190,11 @@ body {
             }
 
             .standings-container {
+                background-color: darkgrey;
+                border-radius: 5px;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+                padding: 20px 0px;
+
                 .standing-element {
                     position: relative;
                     user-select: none;

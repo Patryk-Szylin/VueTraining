@@ -2,9 +2,8 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
   padding-top: 50px;
-  padding-bottom: 20px; }
-  body .container {
-    width: auto !important; }
+  padding-bottom: 20px;
+  background-color: lightgrey; }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -19,7 +18,7 @@ body {
     display: none; } }
 
 .container {
-  /*width: calc(100% - 1200px) !important;*/
+  width: calc(100% - 320px) !important;
   /*#app {
         margin-top: 100px;
     }*/ }
@@ -33,10 +32,12 @@ body {
       .container .entries-container .entry-prizePool .prize-label {
         color: darkorange; }
     .container .entries-container .clock-container {
-      margin-bottom: 85px;
+      /*margin-bottom: 85px;*/
       background-color: #080808;
       border-radius: 0px 0px 5px 5px;
       padding: 10px;
+      width: calc(100% + 338px);
+      margin-left: -165px;
       box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25); }
     .container .entries-container .clock-info {
       margin-bottom: 15px; }
@@ -100,31 +101,46 @@ body {
               .container .entries-container .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance .reward-description .reward-link-container .reward-link {
                 cursor: pointer;
                 margin-right: 5px; }
+    .container .entries-container .entry-enterBtn {
+      padding: 6px 100px;
+      font-size: 24px; }
     .container .entries-container .entries-content {
-      height: 350px;
-      margin-left: 26%; }
+      height: 350px; }
+      .container .entries-container .entries-content .container-icon {
+        width: 50px;
+        height: 50px; }
       .container .entries-container .entries-content .container-title {
         font-size: 14px;
         font-weight: bold; }
-      .container .entries-container .entries-content .players-container .players-list {
-        height: 300px;
-        overflow-y: scroll; }
-      .container .entries-container .entries-content .standings-container .standing-element {
-        position: relative;
-        user-select: none; }
-        .container .entries-container .entries-content .standings-container .standing-element .view-reward-link {
-          text-decoration: underline;
-          color: red;
-          cursor: pointer; }
-          .container .entries-container .entries-content .standings-container .standing-element .view-reward-link:before {
-            content: "View Reward"; }
-          .container .entries-container .entries-content .standings-container .standing-element .view-reward-link.open:before {
-            content: "Hide Reward"; }
-        .container .entries-container .entries-content .standings-container .standing-element .reward-popup {
-          background-color: gray;
-          position: absolute;
-          display: none;
-          bottom: 20px;
-          left: 80px;
-          width: 200px;
-          height: 100px; }
+      .container .entries-container .entries-content .players-container {
+        background-color: darkgrey;
+        border-radius: 5px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        padding: 20px 0px; }
+        .container .entries-container .entries-content .players-container .players-list {
+          height: 300px;
+          overflow-y: scroll; }
+      .container .entries-container .entries-content .standings-container {
+        background-color: darkgrey;
+        border-radius: 5px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        padding: 20px 0px; }
+        .container .entries-container .entries-content .standings-container .standing-element {
+          position: relative;
+          user-select: none; }
+          .container .entries-container .entries-content .standings-container .standing-element .view-reward-link {
+            text-decoration: underline;
+            color: red;
+            cursor: pointer; }
+            .container .entries-container .entries-content .standings-container .standing-element .view-reward-link:before {
+              content: "View Reward"; }
+            .container .entries-container .entries-content .standings-container .standing-element .view-reward-link.open:before {
+              content: "Hide Reward"; }
+          .container .entries-container .entries-content .standings-container .standing-element .reward-popup {
+            background-color: gray;
+            position: absolute;
+            display: none;
+            bottom: 20px;
+            left: 80px;
+            width: 200px;
+            height: 100px; }

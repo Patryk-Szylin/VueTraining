@@ -15,9 +15,10 @@ var app = new Vue({
     methods: {
         addToPlayers: function (event) {
             for (var i = 0; i < 5; i++) {
-                var newCustomer = new Customer(RandomGenerator.getRandomName(), 5);
+                var newCustomer = new Customer(RandomGenerator.getRandomName(), 70);
                 this.entriesData[0].addPlayerToBracket(newCustomer);
             }
+            $(".prize-label").fadeOut(500).fadeIn(500);
         },
         displayReward: function (event) {
             var rewardElement = $(event.target).closest(".standing-element");
