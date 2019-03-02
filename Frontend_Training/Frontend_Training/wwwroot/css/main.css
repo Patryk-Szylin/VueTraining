@@ -3,6 +3,8 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
   padding-top: 50px;
   padding-bottom: 20px; }
+  body .container {
+    width: auto !important; }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -16,64 +18,45 @@ body {
   .carousel-caption {
     display: none; } }
 
-.clock-day:before {
-  content: var(--timer-day); }
-
-.clock-hours:before {
-  content: var(--timer-hours); }
-
-.clock-minutes:before {
-  content: var(--timer-minutes); }
-
-.clock-seconds:before {
-  content: var(--timer-seconds); }
-
-.clock-container {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  background-color: #080808;
-  border-radius: 5px;
-  padding: 60px 20px;
-  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25);
-  display: flex; }
-
-.clock-col {
-  text-align: center;
-  margin-right: 40px;
-  margin-left: 40px;
-  min-width: 90px;
-  position: relative; }
-  .clock-col:not(:last-child):before, .clock-col:not(:last-child):after {
-    content: "";
-    background-color: rgba(255, 255, 255, 0.3);
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    right: -42px; }
-  .clock-col:not(:last-child):before {
-    top: 35%; }
-  .clock-col:not(:last-child):after {
-    top: 50%; }
-
-.clock-timer:before {
-  color: #fff;
-  font-size: 4.2rem;
-  text-transform: uppercase; }
-
-.clock-label {
-  color: rgba(255, 255, 255, 0.35);
-  text-transform: uppercase;
-  font-size: .7rem;
-  margin-top: 10px; }
-
 .container {
-  /*width: calc(100% - 1200px) !important;*/ }
-  .container #app {
-    margin-top: 100px; }
+  /*width: calc(100% - 1200px) !important;*/
+  /*#app {
+        margin-top: 100px;
+    }*/ }
   .container .entries-container {
     text-align: center; }
+    .container .entries-container .entry-title {
+      color: darkorange; }
+    .container .entries-container .clock-container {
+      margin-bottom: 85px;
+      background-color: #080808;
+      border-radius: 0px 0px 5px 5px;
+      padding: 10px;
+      box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25); }
+    .container .entries-container .clock-timerContainer {
+      display: flex;
+      margin-left: calc(50% - 268px); }
+    .container .entries-container .clock-col {
+      text-align: center;
+      margin-right: 20px;
+      margin-left: 20px;
+      min-width: 50px;
+      position: relative; }
+    .container .entries-container .clock-startsIn {
+      font-size: 32px;
+      color: #fff; }
+    .container .entries-container .clock-timer {
+      font-size: 24px;
+      color: #fff; }
+      .container .entries-container .clock-timer:before {
+        color: #fff;
+        font-size: 4.2rem;
+        text-transform: uppercase; }
+    .container .entries-container .clock-label {
+      color: rgba(255, 255, 255, 0.35);
+      text-transform: uppercase;
+      font-size: 12px;
+      /*margin-top: 10px;*/ }
     .container .entries-container .available-rewards-container {
       position: relative; }
       .container .entries-container .available-rewards-container .available-rewards-popup {
@@ -130,7 +113,7 @@ body {
           .container .entries-container .entries-content .standings-container .standing-element .view-reward-link.open:before {
             content: "Hide Reward"; }
         .container .entries-container .entries-content .standings-container .standing-element .reward-popup {
-          background-color: mediumpurple;
+          background-color: gray;
           position: absolute;
           display: none;
           bottom: 20px;

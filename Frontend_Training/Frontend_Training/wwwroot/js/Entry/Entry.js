@@ -1,5 +1,5 @@
 import { PriceAllocator } from "../PriceAllocator/PriceAllocator";
-import { Reward } from "../Reward/Reward";
+import { RewardsFromThreshold } from "../Data/RewardsData";
 var Entry = (function () {
     function Entry(date, totalPrizePool, players, rewards) {
         this.bracketSize = 2;
@@ -7,7 +7,7 @@ var Entry = (function () {
             this.players.push(player);
             this.generateBracketSize();
             this.generatePrizePool();
-            this.updateStandings();
+            this.generateStandings(this.standings);
         };
         this.generatePrizePool = function () {
             var _this = this;
@@ -16,17 +16,11 @@ var Entry = (function () {
                 _this.totalPrizePool += player.entryFee;
             });
         };
-        this.updateStandings = function () {
-            this.getStandingPrices();
-        };
         this.generateBracketSize = function () {
             if (this.bracketSize < this.players.length) {
                 this.bracketSize = this.bracketSize * 2;
                 this.generateBracketSize();
             }
-        };
-        this.getStandingPrices = function () {
-            this.generateStandings(this.standings);
         };
         this.generateStandings = function (standings) {
             var labels = {};
@@ -40,28 +34,21 @@ var Entry = (function () {
             labels[64] = "RO 128";
             labels[128] = "RO 256";
             labels[256] = "RO 512";
-            var proportion = {};
-            proportion[0] = 0.4;
-            proportion[1] = 0.3;
-            proportion[2] = 0.2;
-            proportion[4] = 0.1;
-            proportion[8] = new Reward("Armor", 40);
-            proportion[16] = new Reward("Armor", 35);
-            proportion[32] = new Reward("Armor", 20);
-            proportion[64] = new Reward("Armor", 25);
-            proportion[128] = new Reward("Armor", 15);
-            proportion[256] = new Reward("Armor", 10);
-            Object.keys(proportion).map(function (key, index) {
-                if (proportion[key] == 0) {
-                }
-            });
+            labels[512] = "RO 1024";
+            labels[1024] = "RO 2048";
+            labels[2048] = "RO 4096";
+            labels[4096] = "RO 8192";
+            labels[8192] = "RO 16384";
+            labels[16384] = "RO 32768";
+            labels[32768] = "RO 65536";
+            labels[65536] = "RO 131072";
             var recipientsForEachBracket = this.bracketSize / 2;
             if (recipientsForEachBracket == 1) {
                 var labelExistance = standings.find(function (label) { return label.recipientLabel == labels[recipientsForEachBracket]; });
                 if (labelExistance)
                     return;
-                var first = new PriceAllocator("1st", 1, proportion[0]);
-                var second = new PriceAllocator("2nd", 1, proportion[1]);
+                var first = new PriceAllocator("1st", 1, RewardsFromThreshold.GetRewards(this.bracketSize)[0]);
+                var second = new PriceAllocator("2nd", 1, RewardsFromThreshold.GetRewards(this.bracketSize)[1]);
                 standings.push(first);
                 standings.push(second);
             }
@@ -69,7 +56,7 @@ var Entry = (function () {
                 var labelExistance = standings.find(function (label) { return label.recipientLabel == labels[recipientsForEachBracket]; });
                 if (labelExistance)
                     return;
-                var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, proportion[recipientsForEachBracket]);
+                var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, RewardsFromThreshold.GetRewards(this.bracketSize)[recipientsForEachBracket]);
                 standings.push(newRecipient);
             }
         };

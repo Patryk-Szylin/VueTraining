@@ -3,6 +3,10 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+
+    .container {
+        width: auto !important;
+    }
 }
 
 /* Wrapping element */
@@ -21,100 +25,65 @@ body {
 }
 
 
-.clock {
-    &-day {
-        &:before {
-            content: var(--timer-day);
-        }
-    }
-
-    &-hours {
-        &:before {
-            content: var(--timer-hours);
-        }
-    }
-
-    &-minutes {
-        &:before {
-            content: var(--timer-minutes);
-        }
-    }
-
-    &-seconds {
-        &:before {
-            content: var(--timer-seconds);
-        }
-    }
-}
-
-.clock {
-    &-container {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        background-color: #080808;
-        border-radius: 5px;
-        padding: 60px 20px;
-        box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);
-        display: flex;
-    }
-
-    &-col {
-        text-align: center;
-        margin-right: 40px;
-        margin-left: 40px;
-        min-width: 90px;
-        position: relative;
-
-        &:not(:last-child):before,
-        &:not(:last-child):after {
-            content: "";
-            background-color: rgba(255,255,255,.3);
-            height: 5px;
-            width: 5px;
-            border-radius: 50%;
-            display: block;
-            position: absolute;
-            right: -42px;
-        }
-
-        &:not(:last-child):before {
-            top: 35%;
-        }
-
-        &:not(:last-child):after {
-            top: 50%;
-        }
-    }
-
-    &-timer {
-        &:before {
-            color: #fff;
-            font-size: 4.2rem;
-            text-transform: uppercase;
-        }
-    }
-
-    &-label {
-        color: rgba(255,255,255,.35);
-        text-transform: uppercase;
-        font-size: .7rem;
-        margin-top: 10px;
-    }
-}
-
 .container {
     /*width: calc(100% - 1200px) !important;*/
-    #app {
+    /*#app {
         margin-top: 100px;
-    }
-
+    }*/
     .entries-container {
         text-align: center;
         //https://codepen.io/icebob/pen/JYoQZg/
         //https://codepen.io/eehayman/pen/jVPKpN
         //https://codepen.io/gau/pen/LjQwGp
 
-        #contador {
+        .entry-title {
+            color:darkorange;
+        }
+
+        .clock {
+            &-container {
+                margin-bottom: 85px;
+                background-color: #080808;
+                border-radius: 0px 0px 5px 5px;
+                padding: 10px;
+                box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);
+            }
+
+            &-timerContainer {
+                display: flex;
+                margin-left: calc(50% - 268px);
+            }
+
+            &-col {
+                text-align: center;
+                margin-right: 20px;
+                margin-left: 20px;
+                min-width: 50px;
+                position: relative;
+            }
+
+            &-startsIn{
+                font-size:32px;
+                color:#fff;
+            }
+
+            &-timer {
+                font-size: 24px;
+                color: #fff;
+
+                &:before {
+                    color: #fff;
+                    font-size: 4.2rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            &-label {
+                color: rgba(255,255,255,.35);
+                text-transform: uppercase;
+                font-size: 12px;
+                /*margin-top: 10px;*/
+            }
         }
 
         .available-rewards-container {
@@ -129,7 +98,6 @@ body {
 
                 .reward-instances-container {
                     padding-top: 20px;
-
 
                     .reward-instance {
                         display: inline-block;
@@ -217,7 +185,7 @@ body {
                     }
 
                     .reward-popup {
-                        background-color: mediumpurple;
+                        background-color: gray;
                         position: absolute;
                         display: none;
                         bottom: 20px;

@@ -3,45 +3,42 @@
 }
 
 
-<div class="clock-container">
-    <div class="clock-col">
-        <p class="clock-day clock-timer">
-        </p>
-        <p class="clock-label">
-            Day
-        </p>
-    </div>
-    <div class="clock-col">
-        <p class="clock-hours clock-timer">
-        </p>
-        <p class="clock-label">
-            Hours
-        </p>
-    </div>
-    <div class="clock-col">
-        <p class="clock-minutes clock-timer">
-        </p>
-        <p class="clock-label">
-            Minutes
-        </p>
-    </div>
-    <div class="clock-col">
-        <p class="clock-seconds clock-timer">
-        </p>
-        <p class="clock-label">
-            Seconds
-        </p>
-    </div>
-</div>
 
 <div id="app" class="row">
     <div class="entries-container">
         <div v-for="entry in entriesData">
-            <div class="entry-title">
-                <h1>{{entry.date }}</h1>
-            </div>
-            <div id="contador">
 
+            <div class="clock-container">
+                <div class="entry-title">
+                    <h1>{{entry.date }}</h1>
+                </div>
+                <div class="clock-timerContainer">
+                    <div class="clock-col clock-startsIn">
+                        <p>Starts in </p>
+                    </div>
+                    <div class="clock-col">
+                        <h4 class="clock-hours clock-timer">
+                        </h4>
+                        <p class="clock-label">
+                            Hours
+                        </p>
+                    </div>
+                    <div class="clock-col">
+                        <h4 class="clock-minutes clock-timer">
+                        </h4>
+                        <p class="clock-label">
+                            Minutes
+                        </p>
+                    </div>
+                    <div class="clock-col">
+                        <h4 class="clock-seconds clock-timer">
+                        </h4>
+                        <p class="clock-label">
+                            Seconds
+                        </p>
+                    </div>
+                </div>
+               
             </div>
             <div class="entries-content ">
                 <div class="col-lg-5 players-container">
@@ -65,7 +62,7 @@
                     </div>
                     <div class="standing-element" v-for="recipient in entry.standings">
                         <div v-if="recipient.proportion > 0">
-                            {{recipient.recipientLabel}} : {{(entry.totalPrizePool / recipient.noRecipients) * recipient.proportion}}
+                            {{recipient.recipientLabel}} : {{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7)}}
                         </div>
                         <div v-else>
                             {{recipient.recipientLabel}} :

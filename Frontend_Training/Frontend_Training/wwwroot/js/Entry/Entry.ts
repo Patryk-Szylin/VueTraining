@@ -1,6 +1,7 @@
 ﻿import { Customer } from "../Customer/Customer";
 import { PriceAllocator } from "../PriceAllocator/PriceAllocator";
 import { Reward } from "../Reward/Reward";
+import { RewardsFromThreshold } from "../Data/RewardsData";
 
 export class Entry {
     date: string;
@@ -19,13 +20,16 @@ export class Entry {
         this.rewards = rewards;
         this.standings = new Array<PriceAllocator>();
         this.totalPrizePool = totalPrizePool;
+
+        
+
     }
 
     addPlayerToBracket = function (player: Customer) {
         this.players.push(player);
         this.generateBracketSize();
         this.generatePrizePool();
-        this.updateStandings();
+        this.generateStandings(this.standings);
     }
 
     generatePrizePool = function () {
@@ -35,20 +39,11 @@ export class Entry {
         })
     }
 
-    updateStandings = function () {
-        this.getStandingPrices();
-
-    }
-
     generateBracketSize = function () {
         if (this.bracketSize < this.players.length) {
             this.bracketSize = this.bracketSize * 2;
             this.generateBracketSize();
         }
-    }
-
-    getStandingPrices = function () {
-        this.generateStandings(this.standings);
     }
 
     generateStandings = function (standings) {
@@ -63,29 +58,14 @@ export class Entry {
         labels[64] = "RO 128";
         labels[128] = "RO 256";
         labels[256] = "RO 512";
-
-        // Create a function that assigns proportions based on players
-
-        let proportion: { [key: number]: any } = {};
-        proportion[0] = 0.4;
-        proportion[1] = 0.3;
-        proportion[2] = 0.2;
-        proportion[4] = 0.1;
-        proportion[8] = new Reward("Armor", 40);
-        proportion[16] = new Reward("Armor", 35);
-        proportion[32] = new Reward("Armor", 20);
-        proportion[64] = new Reward("Armor", 25);
-        proportion[128] = new Reward("Armor", 15);
-        proportion[256] = new Reward("Armor", 10);
-
-        // Use this to check for anything that has value 0
-        // If it does, assign a reward object to it
-        Object.keys(proportion).map((key, index) => {
-            if (proportion[key] == 0) {
-                //proportion[key] = ;
-            }
-        })
-
+        labels[512] = "RO 1024";
+        labels[1024] = "RO 2048";
+        labels[2048] = "RO 4096";
+        labels[4096] = "RO 8192";
+        labels[8192] = "RO 16384";
+        labels[16384] = "RO 32768";
+        labels[32768] = "RO 65536";
+        labels[65536] = "RO 131072";
 
         var recipientsForEachBracket = this.bracketSize / 2;
 
@@ -95,8 +75,11 @@ export class Entry {
             if (labelExistance)
                 return;
 
-            var first = new PriceAllocator("1st", 1, proportion[0]);
-            var second = new PriceAllocator("2nd", 1, proportion[1]);
+            //var first = new PriceAllocator("1st", 1, proportion[0]);
+            //var second = new PriceAllocator("2nd", 1, proportion[1]);
+            var first = new PriceAllocator("1st", 1, RewardsFromThreshold.GetRewards(this.bracketSize)[0]);
+            var second = new PriceAllocator("2nd", 1, RewardsFromThreshold.GetRewards(this.bracketSize)[1]);
+
 
             standings.push(first);
             standings.push(second);
@@ -110,7 +93,7 @@ export class Entry {
             if (labelExistance)
                 return;
 
-            var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, proportion[recipientsForEachBracket]);
+            var newRecipient = new PriceAllocator(labels[recipientsForEachBracket], recipientsForEachBracket, RewardsFromThreshold.GetRewards(this.bracketSize)[recipientsForEachBracket]);
 
             standings.push(newRecipient);
         }

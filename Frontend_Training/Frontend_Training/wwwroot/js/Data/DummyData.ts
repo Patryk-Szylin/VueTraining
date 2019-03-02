@@ -61,11 +61,15 @@ export class DummyData {
 
     constructor() {
         this.entries[0] = entry;
+        for (var i = 0; i < 15000; i++) {
+            var player = new Customer(RandomGenerator.getRandomName(), 70);
+            this.entries[0].addPlayerToBracket(player);
+        }
+        
     }
 
     public static GetDummyRewards() {
         for (var i = 0; i < dummyRewards.length; i++) {
-            console.log("kapp");
 
             if (dummyRewards.length > 0) {
                 var newReward = new Reward(dummyRewards[i].name, dummyRewards[i].price, dummyRewards[i].thumbnail);
@@ -78,15 +82,14 @@ export class DummyData {
 
     public static AddPlayersEveryTwoSeconds() {
         var interval = setInterval(function () {
-
-            var randomNumberOfPlayers = Math.floor((Math.random() * 100) + 1);
-
+            var randomNumberOfPlayers = Math.floor((Math.random() * 150) + 1);
+            
             for (var i = 0; i < randomNumberOfPlayers; i++) {
-                var newPlayer = new Customer(RandomGenerator.getRandomName(), 5);
+                var newPlayer = new Customer(RandomGenerator.getRandomName(), 70);
                 entry.addPlayerToBracket(newPlayer);
             }
 
-        }, 5000)
+        }, 3000)
     }
 }
 

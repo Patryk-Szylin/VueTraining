@@ -3,7 +3,6 @@ import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
 import * as moment from 'moment';
-require('moment-countdown');
 var dummyData = new DummyData();
 var app = new Vue({
     el: '#app',
@@ -39,7 +38,6 @@ var app = new Vue({
             var availableRewardsContainer = $(event.target).closest(".available-rewards-container");
             var availableRewardsPopup = availableRewardsContainer.find(".available-rewards-popup");
             var isPopupOpen = availableRewardsPopup.hasClass("open");
-            console.log("jidsajdi");
             isPopupOpen = !isPopupOpen;
             if (isPopupOpen) {
                 availableRewardsPopup.css("display", "block");
@@ -63,14 +61,16 @@ $("img").on("mouseleave", function () {
         $(".reward-description").hide();
     });
 });
+setInterval(function () {
+    var end = moment().endOf('day');
+    var timeLeft = moment(end.diff(moment()));
+    var formatted = timeLeft.format('HH:mm:ss');
+    $(".clock-hours").text(timeLeft.hour());
+    $(".clock-minutes").text(timeLeft.minute());
+    $(".clock-seconds").text(timeLeft.second());
+}, 1000);
 function updateTime() {
-    document.documentElement.style.setProperty('--timer-day', "'" + moment().format("dd") + "'");
-    document.documentElement.style.setProperty('--timer-hours', "'" + moment().format("k") + "'");
-    document.documentElement.style.setProperty('--timer-minutes', "'" + moment().format("mm") + "'");
-    document.documentElement.style.setProperty('--timer-seconds', "'" + moment().format("ss") + "'");
-    requestAnimationFrame(updateTime);
 }
 $(window).on('load', function () {
-    requestAnimationFrame(updateTime);
 });
 //# sourceMappingURL=main.js.map

@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <TypeScriptToolsVersion>3.2</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Remove="wwwroot\js\Customer\Customer.ts" />
     <Content Remove="wwwroot\js\Data\DummyData.ts" />
+    <Content Remove="wwwroot\js\Data\RewardsData.ts" />
     <Content Remove="wwwroot\js\Entry\Entry.ts" />
     <Content Remove="wwwroot\js\Helpers\RandomGenerator.ts" />
     <Content Remove="wwwroot\js\main.ts" />
@@ -16,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BuildWebCompiler" Version="1.12.394" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
@@ -24,6 +24,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\js\Customer\Customer.ts" />
     <TypeScriptCompile Include="wwwroot\js\Data\DummyData.ts" />
+    <TypeScriptCompile Include="wwwroot\js\Data\RewardsData.ts" />
     <TypeScriptCompile Include="wwwroot\js\Entry\Entry.ts" />
     <TypeScriptCompile Include="wwwroot\js\Helpers\RandomGenerator.ts" />
     <TypeScriptCompile Include="wwwroot\js\main.ts" />
