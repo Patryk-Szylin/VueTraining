@@ -7,10 +7,16 @@
 <div id="app" class="row">
     <div class="entries-container">
         <div v-for="entry in entriesData">
-
             <div class="clock-container">
-                <div class="entry-title">
-                    <h1>{{entry.date }}</h1>
+                <div class="clock-info">
+                    <div class="entry-title">
+                        <h1>{{entry.date }}</h1>
+                    </div>
+                    <div>
+                        <div class="entry-prizePool">
+                            Total prize pool <span class="prize-label">£{{entry.totalPrizePool.toLocaleString()}}</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="clock-timerContainer">
                     <div class="clock-col clock-startsIn">
@@ -38,10 +44,11 @@
                         </p>
                     </div>
                 </div>
-               
+
+
             </div>
             <div class="entries-content ">
-                <div class="col-lg-5 players-container">
+                <div class="col-lg-4 players-container">
                     <div class="container-title">
                         Participants ({{entry.players.length}})
                     </div>
@@ -51,12 +58,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <div>
-                        £ {{entry.totalPrizePool}}
-                    </div>
-                </div>
-                <div class="col-lg-5 standings-container">
+   
+                <div class="col-lg-4 standings-container">
                     <div class="container-title">
                         Prizes
                     </div>

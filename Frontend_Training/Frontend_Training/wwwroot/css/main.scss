@@ -40,6 +40,15 @@ body {
             color:darkorange;
         }
 
+        .entry-prizePool {
+            font-size:18px;
+            color: #fff;
+
+            .prize-label {
+                color: darkorange;
+            }
+        }
+
         .clock {
             &-container {
                 margin-bottom: 85px;
@@ -47,6 +56,10 @@ body {
                 border-radius: 0px 0px 5px 5px;
                 padding: 10px;
                 box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);
+            }
+
+            &-info {
+                margin-bottom: 15px;
             }
 
             &-timerContainer {
@@ -150,6 +163,7 @@ body {
 
         .entries-content {
             height: 350px;
+            margin-left: 26%;
 
             .container-title {
                 font-size: 14px;

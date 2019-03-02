@@ -27,12 +27,19 @@ body {
     text-align: center; }
     .container .entries-container .entry-title {
       color: darkorange; }
+    .container .entries-container .entry-prizePool {
+      font-size: 18px;
+      color: #fff; }
+      .container .entries-container .entry-prizePool .prize-label {
+        color: darkorange; }
     .container .entries-container .clock-container {
       margin-bottom: 85px;
       background-color: #080808;
       border-radius: 0px 0px 5px 5px;
       padding: 10px;
       box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25); }
+    .container .entries-container .clock-info {
+      margin-bottom: 15px; }
     .container .entries-container .clock-timerContainer {
       display: flex;
       margin-left: calc(50% - 268px); }
@@ -94,7 +101,8 @@ body {
                 cursor: pointer;
                 margin-right: 5px; }
     .container .entries-container .entries-content {
-      height: 350px; }
+      height: 350px;
+      margin-left: 26%; }
       .container .entries-container .entries-content .container-title {
         font-size: 14px;
         font-weight: bold; }
