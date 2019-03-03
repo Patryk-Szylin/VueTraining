@@ -54,13 +54,13 @@
                             Participants <span class="player-number"> {{entry.players.length}}</span>
                         </h1>
                         <div class="players-list">
-                            <ol >
+                            <ol>
                                 <li v-for="player in entry.players">
                                     <mark>{{player.name}}</mark>
                                 </li>
                             </ol>
                         </div>
- 
+
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -72,57 +72,53 @@
                             Prizes
                         </h1>
                         <div class="standings-container">
-                            <div>
-                                <div class="standing-element" v-for="recipient in entry.standings">
-                                    <div v-if="recipient.proportion > 0">
-                                        {{recipient.recipientLabel}} : {{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7)}}
-                                    </div>
-                                    <div v-else>
-                                        {{recipient.recipientLabel}} :
-                                        £{{recipient.proportion.sellingPrice}} - <a v-on:click="displayReward" class="view-reward-link"></a>
-                                    </div>
-                                    <div class="reward-popup">
-                                        <div>
-                                            Item: {{recipient.proportion.name}}
-                                        </div>
-                                        <div>
-                                            Selling Price: {{recipient.proportion.sellingPrice}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <ol>
+                                <li class="standing-element no-hover elem" v-for="recipient in entry.standings">
+                                    <mark v-if="recipient.proportion > 0">
+                                        {{recipient.recipientLabel}}  
+                                        <span class="reward-price-label"> £{{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7).toLocaleString()}}</span>
+ 
+                                    </mark>
+                                    <mark v-else>
+                                        {{recipient.recipientLabel}}
+                                        <span class="reward-price-label"> In-Game Rewards worth £{{recipient.proportion.sellingPrice}} </span>
+
+                                    </mark>
+                                </li>
+                            </ol>
+
                         </div>
                     </div>
                 </div>
-                
+
 
                 @*<div class="col-lg-4">
-                    <h2>
-                        <svg class="ico-cup">
-                            <use xlink:href="#cup"></use>
-                        </svg>
-                        Prizes
-                    </h2>
-                    <div class="standings-container">
-                        <div class="standing-element" v-for="recipient in entry.standings">
-                            <div v-if="recipient.proportion > 0">
-                                {{recipient.recipientLabel}} : {{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7)}}
-                            </div>
-                            <div v-else>
-                                {{recipient.recipientLabel}} :
-                                £{{recipient.proportion.sellingPrice}} - <a v-on:click="displayReward" class="view-reward-link"></a>
-                            </div>
-                            <div class="reward-popup">
-                                <div>
-                                    Item: {{recipient.proportion.name}}
+                        <h2>
+                            <svg class="ico-cup">
+                                <use xlink:href="#cup"></use>
+                            </svg>
+                            Prizes
+                        </h2>
+                        <div class="standings-container">
+                            <div class="standing-element" v-for="recipient in entry.standings">
+                                <div v-if="recipient.proportion > 0">
+                                    {{recipient.recipientLabel}} : {{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7)}}
                                 </div>
-                                <div>
-                                    Selling Price: {{recipient.proportion.sellingPrice}}
+                                <div v-else>
+                                    {{recipient.recipientLabel}} :
+                                    £{{recipient.proportion.sellingPrice}} - <a v-on:click="displayReward" class="view-reward-link"></a>
+                                </div>
+                                <div class="reward-popup">
+                                    <div>
+                                        Item: {{recipient.proportion.name}}
+                                    </div>
+                                    <div>
+                                        Selling Price: {{recipient.proportion.sellingPrice}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>*@
+                    </div>*@
                 <div class="col-lg-4">
                     <h1>
                         Available Rewards
@@ -166,8 +162,8 @@
         </div>
 
     </div>
-    
-    
+
+
 
 </div>
 
@@ -175,8 +171,8 @@
 <svg style="display: none;">
     <symbol id="people" x="0px" y="0px"
             width="25" height="26" viewBox="0 0 80 60" enable-background="new 0 0 25 26">
-    >
-    <path fill="#F26856" d="M48.355,17.922c3.705,2.323,6.303,6.254,6.776,10.817c1.511,0.706,3.188,1.112,4.966,1.112
+        >
+        <path fill="#F26856" d="M48.355,17.922c3.705,2.323,6.303,6.254,6.776,10.817c1.511,0.706,3.188,1.112,4.966,1.112
 		c6.491,0,11.752-5.261,11.752-11.751c0-6.491-5.261-11.752-11.752-11.752C53.668,6.35,48.453,11.517,48.355,17.922z M40.656,41.984
 		c6.491,0,11.752-5.262,11.752-11.752s-5.262-11.751-11.752-11.751c-6.49,0-11.754,5.262-11.754,11.752S34.166,41.984,40.656,41.984
 		z M45.641,42.785h-9.972c-8.297,0-15.047,6.751-15.047,15.048v12.195l0.031,0.191l0.84,0.263
@@ -187,7 +183,7 @@
 		c0.012-0.22,0.033-0.438,0.033-0.66c0-6.491-5.262-11.752-11.75-11.752c-6.492,0-11.752,5.261-11.752,11.752
 		C8.283,24.591,13.543,29.853,20.035,29.853z M30.589,40.741c-2.66-2.551-4.344-6.097-4.467-10.032
 		c-0.367-0.027-0.73-0.056-1.104-0.056h-9.971C6.75,30.653,0,37.403,0,45.699v12.197l0.031,0.188l0.84,0.265
-		c6.352,1.983,12.021,2.897,16.945,3.185v-3.683C17.818,49.773,23.212,42.936,30.589,40.741z"/>
+		c6.352,1.983,12.021,2.897,16.945,3.185v-3.683C17.818,49.773,23.212,42.936,30.589,40.741z" />
     </symbol>
 </svg>
 
@@ -212,6 +208,18 @@
 	C13.195,16.578,13.344,17.436,13.673,18.301z M12.5,14.276c-2.856,0-4.93-2.638-4.93-6.273V1.73h9.859v6.273
 	C17.43,11.638,15.357,14.276,12.5,14.276z M21.215,7.138h-1.452c-0.197,0-0.39,0.024-0.572,0.07v-2.06
 	c0-1.097,0.908-1.99,2.024-1.99c1.117,0,2.025,0.893,2.025,1.99C23.241,6.246,22.333,7.138,21.215,7.138z" />
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

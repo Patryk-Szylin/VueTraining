@@ -25,6 +25,7 @@ var app = new Vue({
             var isPopupOpen = rewardPopup.hasClass("open");
             var allOpenedPopups = $(".reward-popup");
             isPopupOpen = !isPopupOpen;
+            console.log("dkoasodk");
             if (isPopupOpen) {
                 rewardElement.find(".reward-popup").css("display", "block");
                 rewardPopup.addClass("open");

@@ -19,6 +19,36 @@
     }
 
     .standings-container {
+
+        .no-hover {
+            pointer-events: none;
+        }
+
+        .reward-price-label {
+            float: right;
+            margin-right:80px;
+        }
+    }
+
+    h1 {
+        font-size: 18px;
+        color: #e1e1e1;
+        padding: 12px 13px 18px;
+
+        & svg {
+            width: 25px;
+            height: 26px;
+            position: relative;
+            top: 3px;
+            margin-right: 6px;
+            vertical-align: baseline;
+        }
+    }
+
+    ol {
+        padding: 0px !important;
+        list-style-type: none;
+
         .standing-element {
             position: relative;
             user-select: none;
@@ -51,26 +81,31 @@
                 height: 100px;
             }
         }
-    }
 
-    h1 {
-        font-size: 18px;
-        color: #e1e1e1;
-        padding: 12px 13px 18px;
+        li:nth-child(1) {
+            &.elem {
 
-        & svg {
-            width: 25px;
-            height: 26px;
-            position: relative;
-            top: 3px;
-            margin-right: 6px;
-            vertical-align: baseline;
+
+                mark {
+                    color: #303543;
+                    font-weight: bold;
+
+                    &::before, &::after {
+                        opacity: 1;
+                        border-top: 10px solid #84610b;
+                    }
+                }
+
+                &::after {
+                    opacity: 1;
+                    background-color: #caa30f;
+                    transform: scaleX(1.06) scaleY(1.03);
+                }
+            }
+            /*&::before, &::after{
+                    opacity: 1;
+                }*/
         }
-    }
-
-    ol {
-        padding: 0px !important;
-        list-style-type: none;
 
         li {
             position: relative;
@@ -79,9 +114,7 @@
             padding: 18px 10px 18px 50px;
             cursor: pointer;
             transform: translateZ(0) scale(1.0, 1.0);
-
-
-            &::before {
+            /*&::before {
                 position: absolute;
                 z-index: 2;
                 top: 15px;
@@ -93,8 +126,7 @@
                 background: #fff;
                 border-radius: 20px;
                 text-align: center;
-            }
-
+            }*/
             mark {
                 position: absolute;
                 z-index: 2;
@@ -106,6 +138,8 @@
                 margin: 0;
                 background: none;
                 color: #fff;
+
+
 
                 &::before, &::after {
                     content: '';
