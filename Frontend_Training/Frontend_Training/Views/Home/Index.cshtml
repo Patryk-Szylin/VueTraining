@@ -75,13 +75,13 @@
                             <ol>
                                 <li class="standing-element no-hover elem" v-for="recipient in entry.standings">
                                     <mark v-if="recipient.proportion > 0">
-                                        {{recipient.recipientLabel}}  
+                                        {{recipient.recipientLabel}}
                                         <span class="reward-price-label"> £{{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7).toLocaleString()}}</span>
- 
+
                                     </mark>
                                     <mark v-else>
                                         {{recipient.recipientLabel}}
-                                        <span class="reward-price-label"> <span class="in-game-rewards-label">In-Game Rewards worth </span>£{{recipient.proportion.sellingPrice}} </span>
+                                        <span class="reward-price-label"> <span class="in-game-rewards-label">In-game rewards worth </span>£{{recipient.proportion.sellingPrice}} </span>
 
                                     </mark>
                                 </li>
@@ -90,72 +90,49 @@
                         </div>
                     </div>
                 </div>
-
-
-                @*<div class="col-lg-4">
-                        <h2>
-                            <svg class="ico-cup">
-                                <use xlink:href="#cup"></use>
-                            </svg>
-                            Prizes
-                        </h2>
-                        <div class="standings-container">
-                            <div class="standing-element" v-for="recipient in entry.standings">
-                                <div v-if="recipient.proportion > 0">
-                                    {{recipient.recipientLabel}} : {{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7)}}
-                                </div>
-                                <div v-else>
-                                    {{recipient.recipientLabel}} :
-                                    £{{recipient.proportion.sellingPrice}} - <a v-on:click="displayReward" class="view-reward-link"></a>
-                                </div>
-                                <div class="reward-popup">
-                                    <div>
-                                        Item: {{recipient.proportion.name}}
-                                    </div>
-                                    <div>
-                                        Selling Price: {{recipient.proportion.sellingPrice}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>*@
                 <div class="col-lg-4">
-                    <h1>
-                        Available Rewards
-                    </h1>
-                    <div class=" available-rewards-container">
-                        <div class="available-rewards-popup">
-                            <div class="reward-instances-container">
-                                <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards">
-                                    <div>
-                                        <div class="reward-thumbnail">
-                                            <img v-bind:src="reward.thumbnail" />
+                    <div class="panel-container rewards-container">
+                        <h1>
+                            <svg class="ico-cup">
+                                <use xlink:href="#people"></use>
+                            </svg>
+                            Available In-game Rewards
+                        </h1>
+                        <div class=" available-rewards-container">
+                            <div class="available-rewards-popup">
+                                <div class="reward-instances-container">
+                                    <div class="reward-instance" v-for="reward in dummyRewards">
+                                        <div>
+                                            <div class="reward-thumbnail">
+                                                <img v-bind:src="reward.thumbnail" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="reward-description shadow">
-                                        <div class="reward-title">
-                                            {{reward.name}}
-                                        </div>
-                                        <div class="reward-value">
-                                            Shop price: £<span class="reward-price"> {{reward.sellingPrice}} </span>
-                                        </div>
-                                        <div class="reward-link-container">
-                                            <span class="reward-link">
-                                                <img src="~/images/stretch-icon.png" />
-                                                Preview
-                                            </span>
-                                            <span class="reward-link">
-                                                <img src="~/images/market-icon.png" />
-                                                Market
-                                            </span>
+                                        <div class="reward-description shadow">
+                                            <div class="reward-title">
+                                                {{reward.name}}
+                                            </div>
+                                            <div class="reward-value">
+                                                Shop price: £<span class="reward-price"> {{reward.sellingPrice}} </span>
+                                            </div>
+                                            <div class="reward-link-container">
+                                                <span class="reward-link">
+                                                    <img src="~/images/stretch-icon.png" />
+                                                    Preview
+                                                </span>
+                                                <span class="reward-link">
+                                                    <img src="~/images/market-icon.png" />
+                                                    Market
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-6" v-if="entriesData != undefined">
+                                <div v-on:click="addToPlayers()" class="btn btn-primary entry-enterBtn">Enter</div>
+                            </div>
                         </div>
-                        <div class="col-lg-6" v-if="entriesData != undefined">
-                            <div v-on:click="addToPlayers()" class="btn btn-primary entry-enterBtn">Enter</div>
-                        </div>
+
                     </div>
                 </div>
             </div>

@@ -51,7 +51,7 @@ var DummyData = (function () {
     function DummyData() {
         this.entries = {};
         this.entries[0] = entry;
-        for (var i = 0; i < 5000; i++) {
+        for (var i = 0; i < 20; i++) {
             var player = new Customer(RandomGenerator.getRandomName(), 70);
             this.entries[0].addPlayerToBracket(player);
         }

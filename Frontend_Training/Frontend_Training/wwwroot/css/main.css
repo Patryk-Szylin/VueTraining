@@ -4,8 +4,8 @@
   background-color: #080808;
   border-radius: 0px 0px 5px 5px;
   padding: 10px;
-  width: calc(100% + 338px);
-  margin-left: -165px;
+  width: calc(100% + 500px);
+  margin-left: -250px;
   box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25); }
 
 .clock-info {
@@ -42,17 +42,21 @@
 
 .panel-container {
   position: relative;
-  width: 415px;
+  /*width: 415px;*/
   background: linear-gradient(to bottom, #3a404d, #181c26);
   border-radius: 10px;
   box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
   z-index: 40;
   color: white; }
+  .panel-container.rewards-container {
+    /*width: 300px;
+        height:200px;*/ }
   .panel-container.prizes-container {
     padding-bottom: 15px; }
     .panel-container.prizes-container .in-game-rewards-label {
       color: #f26856;
-      font-size: 12px; }
+      font-size: 12px;
+      margin-right: 15px; }
   .panel-container .player-number {
     float: right;
     padding-top: 11px;
@@ -184,19 +188,21 @@
 .available-rewards-container {
   position: relative; }
   .available-rewards-container .available-rewards-popup {
-    position: relative;
-    display: block;
-    background-color: pink;
-    height: 200px;
-    width: 460px; }
+    /*height: 200px;
+        width: 460px;*/ }
     .available-rewards-container .available-rewards-popup .reward-instances-container {
-      padding-top: 20px; }
+      display: flex;
+      flex-wrap: wrap;
+      padding: 15px 28px; }
       .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance {
-        display: inline-block;
-        height: 100px; }
+        /*display: inline-block;
+                height: 100px;*/
+        flex-basis: 95px;
+        padding-left: 10px;
+        padding-bottom: 25px; }
         .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance .reward-thumbnail img {
-          width: 50px;
-          height: 50px; }
+          width: 80px;
+          height: 80px; }
         .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance .reward-description {
           background-color: navajowhite;
           display: none;
@@ -233,7 +239,7 @@ body {
   padding-right: 15px; }
 
 .container {
-  width: calc(100% - 320px) !important; }
+  width: calc(100% - 500px) !important; }
   .container .entries-container .entry-title {
     color: darkorange; }
   .container .entries-container .entry-prizePool {

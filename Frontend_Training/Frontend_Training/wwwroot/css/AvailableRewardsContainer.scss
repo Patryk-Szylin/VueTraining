@@ -1,24 +1,28 @@
 ﻿.available-rewards-container {
     position: relative;
 
+
+   
+
     .available-rewards-popup {
-        position: relative;
-        display: block;
-        background-color: pink;
-        height: 200px;
-        width: 460px;
+        /*height: 200px;
+        width: 460px;*/
 
         .reward-instances-container {
-            padding-top: 20px;
+            display:flex;
+            flex-wrap:wrap;
+            padding:15px 28px;
 
             .reward-instance {
-                display: inline-block;
-                height: 100px;
-
+                /*display: inline-block;
+                height: 100px;*/
+                flex-basis:95px;
+                padding-left:10px;
+                padding-bottom:25px;
                 .reward-thumbnail {
                     img {
-                        width: 50px;
-                        height: 50px;
+                        width: 80px;
+                        height: 80px;
                     }
                 }
 
