@@ -16,7 +16,7 @@ var app = new Vue({
     },
     methods: {
         addToPlayers: function (event) {
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 100; i++) {
                 var newCustomer = new Customer(RandomGenerator.getRandomName(), 70);
                 this.entriesData[0].addPlayerToBracket(newCustomer);
             }
@@ -67,7 +67,7 @@ $("img").on("mouseenter", function () {
 })
 
 $("img").on("mouseleave", function () {
-    $(this).closest(".reward-instance").on("mouseleave", function () {
+    $(this).closest(".reward-instance").on("mouseleave", () => {
         $(".reward-description").hide();
     })
 

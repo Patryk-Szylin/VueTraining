@@ -104,13 +104,13 @@
                         <div class=" available-rewards-container">
                             <div class="available-rewards-popup">
                                 <div class="reward-instances-container">
-                                    <div class="reward-instance" v-for="reward in dummyRewards">
+                                    <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards">
                                         <div>
                                             <div class="reward-thumbnail">
                                                 <img v-bind:src="reward.thumbnail" />
                                             </div>
                                         </div>
-                                        <div class="reward-description shadow">
+                                        <div class="reward-description">
                                             <div class="reward-title">
                                                 {{reward.name}}
                                             </div>

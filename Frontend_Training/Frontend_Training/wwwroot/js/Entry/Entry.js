@@ -4,7 +4,7 @@ var Entry = (function () {
     function Entry(date, totalPrizePool, players, rewards) {
         this.bracketSize = 2;
         this.addPlayerToBracket = function (player) {
-            this.players.push(player);
+            this.players.unshift(player);
             this.generateBracketSize();
             this.generatePrizePool();
             this.generateStandings(this.standings);

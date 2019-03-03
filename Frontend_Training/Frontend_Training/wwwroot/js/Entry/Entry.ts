@@ -26,7 +26,7 @@ export class Entry {
     }
 
     addPlayerToBracket = function (player: Customer) {
-        this.players.push(player);
+        this.players.unshift(player);
         this.generateBracketSize();
         this.generatePrizePool();
         this.generateStandings(this.standings);

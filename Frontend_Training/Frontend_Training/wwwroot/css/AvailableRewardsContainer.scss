@@ -1,24 +1,23 @@
 ﻿.available-rewards-container {
     position: relative;
 
-
-   
-
     .available-rewards-popup {
         /*height: 200px;
         width: 460px;*/
-
         .reward-instances-container {
-            display:flex;
-            flex-wrap:wrap;
-            padding:15px 28px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 15px 28px;
 
             .reward-instance {
                 /*display: inline-block;
                 height: 100px;*/
-                flex-basis:95px;
-                padding-left:10px;
-                padding-bottom:25px;
+                flex-basis: 95px;
+                padding-left: 10px;
+                padding-bottom: 25px;
+                color: #F26856;
+                text-align: center;
+
                 .reward-thumbnail {
                     img {
                         width: 80px;
@@ -27,18 +26,32 @@
                 }
 
                 .reward-description {
-                    background-color: navajowhite;
+                    background-color: #fa6855;
                     display: none;
                     position: absolute;
-                    top: 55px;
+                    top: 95px;
                     width: 200px;
                     z-index: 1;
-                    left: -43px;
+                    left: -45px;
                     border-radius: 5px;
                     padding: 5px;
+                    color: #fff;
                     -webkit-box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
                     -moz-box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
                     box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
+
+                    &:after {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        transform: rotate(-45deg);
+                        background: #fa6855;
+                        position: absolute;
+                        /*box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);*/
+                        z-index: -1;
+                        top: -10px;
+                        left: calc(50% - 10px);
+                    }
 
 
                     .reward-title {
@@ -48,7 +61,7 @@
                         margin-bottom: 10px;
 
                         .reward-price {
-                            color: orangered;
+                            color: #fff;
                         }
                     }
 
