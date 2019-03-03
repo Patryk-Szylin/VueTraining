@@ -75,17 +75,17 @@ $("img").on("mouseleave", function () {
 //https://stackoverflow.com/questions/16129157/countdown-timer-using-moment-js
 
 
-setInterval(function () {
-    const end = moment().endOf('day');
-    const timeLeft = moment(end.diff(moment()));
-    const formatted = timeLeft.format('HH:mm:ss');
+//setInterval(function () {
+//    const end = moment().endOf('day');
+//    const timeLeft = moment(end.diff(moment()));
+//    const formatted = timeLeft.format('HH:mm:ss');
 
-    $(".clock-hours").text(timeLeft.hour());
-    $(".clock-minutes").text(timeLeft.minute());
-    $(".clock-seconds").text(timeLeft.second());
+//    $(".clock-hours").text(timeLeft.hour());
+//    $(".clock-minutes").text(timeLeft.minute());
+//    $(".clock-seconds").text(timeLeft.second());
 
 
-},1000);
+//},1000);
 
 function updateTime() {
 

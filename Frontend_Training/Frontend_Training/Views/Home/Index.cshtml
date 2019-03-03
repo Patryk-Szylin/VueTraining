@@ -3,6 +3,8 @@
 }
 
 
+@*@Html.Partial("Partials/LeaderBoard")*@
+
 
 <div id="app" class="row">
     <div class="entries-container">
@@ -23,22 +25,19 @@
                         <p>Starts in </p>
                     </div>
                     <div class="clock-col">
-                        <h4 class="clock-hours clock-timer">
-                        </h4>
+                        <h4 class="clock-hours clock-timer"></h4>
                         <p class="clock-label">
                             Hours
                         </p>
                     </div>
                     <div class="clock-col">
-                        <h4 class="clock-minutes clock-timer">
-                        </h4>
+                        <h4 class="clock-minutes clock-timer"></h4>
                         <p class="clock-label">
                             Minutes
                         </p>
                     </div>
                     <div class="clock-col">
-                        <h4 class="clock-seconds clock-timer">
-                        </h4>
+                        <h4 class="clock-seconds clock-timer"></h4>
                         <p class="clock-label">
                             Seconds
                         </p>
@@ -47,20 +46,62 @@
             </div>
             <div class="entries-content ">
                 <div class="col-lg-4">
-                    <h2>
-                        <img class="container-icon" src="images/people.png"/> Participants ({{entry.players.length}})
-                    </h2>
-                    <div class="players-container">
+                    <div class="panel-container">
+                        <h1>
+                            <svg class="ico-cup">
+                                <use xlink:href="#people"></use>
+                            </svg>
+                            Participants <span class="player-number"> {{entry.players.length}}</span>
+                        </h1>
                         <div class="players-list">
-                            <div v-for="player in entry.players">
-                                <div>{{player.name}}</div>
+                            <ol >
+                                <li v-for="player in entry.players">
+                                    <mark>{{player.name}}</mark>
+                                </li>
+                            </ol>
+                        </div>
+ 
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel-container">
+                        <h1>
+                            <svg class="ico-cup">
+                                <use xlink:href="#cup"></use>
+                            </svg>
+                            Prizes
+                        </h1>
+                        <div class="standings-container">
+                            <div>
+                                <div class="standing-element" v-for="recipient in entry.standings">
+                                    <div v-if="recipient.proportion > 0">
+                                        {{recipient.recipientLabel}} : {{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7)}}
+                                    </div>
+                                    <div v-else>
+                                        {{recipient.recipientLabel}} :
+                                        £{{recipient.proportion.sellingPrice}} - <a v-on:click="displayReward" class="view-reward-link"></a>
+                                    </div>
+                                    <div class="reward-popup">
+                                        <div>
+                                            Item: {{recipient.proportion.name}}
+                                        </div>
+                                        <div>
+                                            Selling Price: {{recipient.proportion.sellingPrice}}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                
+
+                @*<div class="col-lg-4">
                     <h2>
-                        <img class="container-icon" src="images/trophy.png" /> Prizes
+                        <svg class="ico-cup">
+                            <use xlink:href="#cup"></use>
+                        </svg>
+                        Prizes
                     </h2>
                     <div class="standings-container">
                         <div class="standing-element" v-for="recipient in entry.standings">
@@ -81,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
                 <div class="col-lg-4">
                     <h1>
                         Available Rewards
@@ -92,7 +133,7 @@
                                 <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards">
                                     <div>
                                         <div class="reward-thumbnail">
-                                            <img v-bind:src="reward.thumbnail"/>
+                                            <img v-bind:src="reward.thumbnail" />
                                         </div>
                                     </div>
                                     <div class="reward-description shadow">
@@ -104,11 +145,11 @@
                                         </div>
                                         <div class="reward-link-container">
                                             <span class="reward-link">
-                                                <img src="~/images/stretch-icon.png"/>
+                                                <img src="~/images/stretch-icon.png" />
                                                 Preview
                                             </span>
                                             <span class="reward-link">
-                                                <img src="~/images/market-icon.png"/>
+                                                <img src="~/images/market-icon.png" />
                                                 Market
                                             </span>
                                         </div>
@@ -123,12 +164,59 @@
                 </div>
             </div>
         </div>
- 
+
     </div>
+    
+    
 
 </div>
 
 
+<svg style="display: none;">
+    <symbol id="people" x="0px" y="0px"
+            width="25" height="26" viewBox="0 0 80 60" enable-background="new 0 0 25 26">
+    >
+    <path fill="#F26856" d="M48.355,17.922c3.705,2.323,6.303,6.254,6.776,10.817c1.511,0.706,3.188,1.112,4.966,1.112
+		c6.491,0,11.752-5.261,11.752-11.751c0-6.491-5.261-11.752-11.752-11.752C53.668,6.35,48.453,11.517,48.355,17.922z M40.656,41.984
+		c6.491,0,11.752-5.262,11.752-11.752s-5.262-11.751-11.752-11.751c-6.49,0-11.754,5.262-11.754,11.752S34.166,41.984,40.656,41.984
+		z M45.641,42.785h-9.972c-8.297,0-15.047,6.751-15.047,15.048v12.195l0.031,0.191l0.84,0.263
+		c7.918,2.474,14.797,3.299,20.459,3.299c11.059,0,17.469-3.153,17.864-3.354l0.785-0.397h0.084V57.833
+		C60.688,49.536,53.938,42.785,45.641,42.785z M65.084,30.653h-9.895c-0.107,3.959-1.797,7.524-4.47,10.088
+		c7.375,2.193,12.771,9.032,12.771,17.11v3.758c9.77-0.358,15.4-3.127,15.771-3.313l0.785-0.398h0.084V45.699
+		C80.13,37.403,73.38,30.653,65.084,30.653z M20.035,29.853c2.299,0,4.438-0.671,6.25-1.814c0.576-3.757,2.59-7.04,5.467-9.276
+		c0.012-0.22,0.033-0.438,0.033-0.66c0-6.491-5.262-11.752-11.75-11.752c-6.492,0-11.752,5.261-11.752,11.752
+		C8.283,24.591,13.543,29.853,20.035,29.853z M30.589,40.741c-2.66-2.551-4.344-6.097-4.467-10.032
+		c-0.367-0.027-0.73-0.056-1.104-0.056h-9.971C6.75,30.653,0,37.403,0,45.699v12.197l0.031,0.188l0.84,0.265
+		c6.352,1.983,12.021,2.897,16.945,3.185v-3.683C17.818,49.773,23.212,42.936,30.589,40.741z"/>
+    </symbol>
+</svg>
+
+
+<svg style="display: none;">
+    <symbol id="cup" x="0px" y="0px"
+            width="25px" height="26px" viewBox="0 0 25 26" enable-background="new 0 0 25 26" xml:space="preserve">
+<path fill="#F26856" d="M21.215,1.428c-0.744,0-1.438,0.213-2.024,0.579V0.865c0-0.478-0.394-0.865-0.88-0.865H6.69
+	C6.204,0,5.81,0.387,5.81,0.865v1.142C5.224,1.641,4.53,1.428,3.785,1.428C1.698,1.428,0,3.097,0,5.148
+	C0,7.2,1.698,8.869,3.785,8.869h1.453c0.315,0,0.572,0.252,0.572,0.562c0,0.311-0.257,0.563-0.572,0.563
+	c-0.486,0-0.88,0.388-0.88,0.865c0,0.478,0.395,0.865,0.88,0.865c0.421,0,0.816-0.111,1.158-0.303
+	c0.318,0.865,0.761,1.647,1.318,2.31c0.686,0.814,1.515,1.425,2.433,1.808c-0.04,0.487-0.154,1.349-0.481,2.191
+	c-0.591,1.519-1.564,2.257-2.975,2.257H5.238c-0.486,0-0.88,0.388-0.88,0.865v4.283c0,0.478,0.395,0.865,0.88,0.865h14.525
+	c0.485,0,0.88-0.388,0.88-0.865v-4.283c0-0.478-0.395-0.865-0.88-0.865h-1.452c-1.411,0-2.385-0.738-2.975-2.257
+	c-0.328-0.843-0.441-1.704-0.482-2.191c0.918-0.383,1.748-0.993,2.434-1.808c0.557-0.663,1-1.445,1.318-2.31
+	c0.342,0.192,0.736,0.303,1.157,0.303c0.486,0,0.88-0.387,0.88-0.865c0-0.478-0.394-0.865-0.88-0.865
+	c-0.315,0-0.572-0.252-0.572-0.563c0-0.31,0.257-0.562,0.572-0.562h1.452C23.303,8.869,25,7.2,25,5.148
+	C25,3.097,23.303,1.428,21.215,1.428z M5.238,7.138H3.785c-1.116,0-2.024-0.893-2.024-1.99c0-1.097,0.908-1.99,2.024-1.99
+	c1.117,0,2.025,0.893,2.025,1.99v2.06C5.627,7.163,5.435,7.138,5.238,7.138z M18.883,21.717v2.553H6.118v-2.553H18.883
+	L18.883,21.717z M13.673,18.301c0.248,0.65,0.566,1.214,0.947,1.686h-4.24c0.381-0.472,0.699-1.035,0.947-1.686
+	c0.33-0.865,0.479-1.723,0.545-2.327c0.207,0.021,0.416,0.033,0.627,0.033c0.211,0,0.42-0.013,0.627-0.033
+	C13.195,16.578,13.344,17.436,13.673,18.301z M12.5,14.276c-2.856,0-4.93-2.638-4.93-6.273V1.73h9.859v6.273
+	C17.43,11.638,15.357,14.276,12.5,14.276z M21.215,7.138h-1.452c-0.197,0-0.39,0.024-0.572,0.07v-2.06
+	c0-1.097,0.908-1.99,2.024-1.99c1.117,0,2.025,0.893,2.025,1.99C23.241,6.246,22.333,7.138,21.215,7.138z" />
+
+
+
+      </symbol>
+</svg>
 
 
 

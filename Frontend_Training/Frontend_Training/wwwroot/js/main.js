@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
-import * as moment from 'moment';
 var dummyData = new DummyData();
 var app = new Vue({
     el: '#app',
@@ -62,14 +61,6 @@ $("img").on("mouseleave", function () {
         $(".reward-description").hide();
     });
 });
-setInterval(function () {
-    var end = moment().endOf('day');
-    var timeLeft = moment(end.diff(moment()));
-    var formatted = timeLeft.format('HH:mm:ss');
-    $(".clock-hours").text(timeLeft.hour());
-    $(".clock-minutes").text(timeLeft.minute());
-    $(".clock-seconds").text(timeLeft.second());
-}, 1000);
 function updateTime() {
 }
 $(window).on('load', function () {

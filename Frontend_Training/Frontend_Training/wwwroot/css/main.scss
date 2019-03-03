@@ -1,5 +1,9 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
+﻿/*@import "Leaderboard.scss";*/
+
+@import "ClockContainer.scss";
+@import "PanelContainer.scss";
+@import "AvailableRewardsContainer.scss";
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -13,25 +17,10 @@ body {
     padding-right: 15px;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
-}
-
-
 .container {
     width: calc(100% - 320px) !important;
-    /*#app {
-        margin-top: 100px;
-    }*/
+
     .entries-container {
-        text-align: center;
-        //https://codepen.io/icebob/pen/JYoQZg/
-        //https://codepen.io/eehayman/pen/jVPKpN
-        //https://codepen.io/gau/pen/LjQwGp
         .entry-title {
             color: darkorange;
         }
@@ -45,187 +34,11 @@ body {
             }
         }
 
-        .clock {
-            &-container {
-                /*margin-bottom: 85px;*/
-                background-color: #080808;
-                border-radius: 0px 0px 5px 5px;
-                padding: 10px;
-                width: calc(100% + 338px);
-                margin-left: -165px;
-                box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);
-            }
-
-            &-info {
-                margin-bottom: 15px;
-            }
-
-            &-timerContainer {
-                display: flex;
-                margin-left: calc(50% - 268px);
-            }
-
-            &-col {
-                text-align: center;
-                margin-right: 20px;
-                margin-left: 20px;
-                min-width: 50px;
-                position: relative;
-            }
-
-            &-startsIn {
-                font-size: 32px;
-                color: #fff;
-            }
-
-            &-timer {
-                font-size: 24px;
-                color: #fff;
-
-                &:before {
-                    color: #fff;
-                    font-size: 4.2rem;
-                    text-transform: uppercase;
-                }
-            }
-
-            &-label {
-                color: rgba(255,255,255,.35);
-                text-transform: uppercase;
-                font-size: 12px;
-                /*margin-top: 10px;*/
-            }
-        }
-
-        .available-rewards-container {
-            position: relative;
-
-            .available-rewards-popup {
-                position: relative;
-                display: block;
-                background-color: pink;
-                height: 200px;
-                width: 460px;
-
-                .reward-instances-container {
-                    padding-top: 20px;
-
-                    .reward-instance {
-                        display: inline-block;
-                        height: 100px;
-
-                        .reward-thumbnail {
-                            img {
-                                width: 50px;
-                                height: 50px;
-                            }
-                        }
-
-                        .reward-description {
-                            background-color: navajowhite;
-                            display: none;
-                            position: absolute;
-                            top: 55px;
-                            width: 200px;
-                            z-index: 1;
-                            left: -43px;
-                            border-radius: 5px;
-                            padding: 5px;
-                            -webkit-box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
-                            -moz-box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
-                            box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
-
-
-                            .reward-title {
-                            }
-
-                            .reward-value {
-                                margin-bottom: 10px;
-
-                                .reward-price {
-                                    color: orangered;
-                                }
-                            }
-
-                            .reward-link-container {
-                                .reward-link {
-                                    cursor: pointer;
-                                    margin-right: 5px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
+                     
         .entry-enterBtn {
             padding: 6px 100px;
             font-size: 24px;
         }
 
-        .entries-content {
-            height: 350px;
-
-            .container-icon {
-                width: 50px;
-                height: 50px;
-            }
-
-            .container-title {
-                font-size: 14px;
-                font-weight: bold;
-            }
-
-            .players-container {
-                background-color: darkgrey;
-                border-radius: 5px;
-                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-                padding: 20px 0px;
-
-                .players-list {
-                    height: 300px;
-                    overflow-y: scroll;
-                }
-            }
-
-            .standings-container {
-                background-color: darkgrey;
-                border-radius: 5px;
-                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-                padding: 20px 0px;
-
-                .standing-element {
-                    position: relative;
-                    user-select: none;
-
-                    .view-reward-link {
-                        text-decoration: underline;
-                        color: red;
-                        cursor: pointer;
-
-                        &:before {
-                            content: "View Reward";
-                        }
-
-                        &.open {
-                            &:before {
-                                content: "Hide Reward";
-                            }
-                        }
-                    }
-
-                    .reward-popup {
-                        background-color: gray;
-                        position: absolute;
-                        display: none;
-                        bottom: 20px;
-                        left: 80px;
-                        width: 200px;
-                        height: 100px;
-                    }
-                }
-            }
-        }
     }
 }
