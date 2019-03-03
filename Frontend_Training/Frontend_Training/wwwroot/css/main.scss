@@ -3,7 +3,7 @@
 @import "ClockContainer.scss";
 @import "PanelContainer.scss";
 @import "AvailableRewardsContainer.scss";
-
+@import "FancyButton.scss";
 
 [v-cloak] {
     display:none;
@@ -47,8 +47,8 @@ body {
 
     }
 
-    .enter-btn {
+    /*.enter-btn {
         margin-left:150px;
-    }
+    }*/
 
 }

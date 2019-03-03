@@ -238,6 +238,54 @@
             cursor: pointer;
             margin-right: 5px; }
 
+.draw-border {
+  box-shadow: inset 0 0 0 4px #F26856;
+  color: #F26856;
+  transition: color 0.25s 0.08333s;
+  position: relative; }
+  .draw-border::before, .draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0; }
+  .draw-border::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px; }
+  .draw-border::after {
+    border-top-width: 4px;
+    border-right-width: 4px; }
+  .draw-border:hover {
+    color: #87D37C; }
+    .draw-border:hover::before, .draw-border:hover::after {
+      border-color: #87D37C;
+      transition: border-color 0s, width 0.25s, height 0.25s;
+      width: 100%;
+      height: 100%; }
+    .draw-border:hover::before {
+      transition-delay: 0s, 0s, 0.25s; }
+    .draw-border:hover::after {
+      transition-delay: 0s, 0.25s, 0s; }
+
+.entry-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+  font-size: 24px;
+  width: 240px;
+  text-align: center;
+  margin-left: 170px; }
+  .entry-btn:focus {
+    outline: 2px dotted #55d7dc; }
+
 [v-cloak] {
   display: none; }
 
@@ -253,7 +301,10 @@ body {
   padding-right: 15px; }
 
 .container {
-  width: calc(100% - 500px) !important; }
+  width: calc(100% - 500px) !important;
+  /*.enter-btn {
+        margin-left:150px;
+    }*/ }
   .container .entries-container .entry-title {
     color: darkorange; }
   .container .entries-container .entry-prizePool {
@@ -264,5 +315,3 @@ body {
   .container .entries-container .entry-enterBtn {
     padding: 6px 100px;
     font-size: 24px; }
-  .container .enter-btn {
-    margin-left: 150px; }
