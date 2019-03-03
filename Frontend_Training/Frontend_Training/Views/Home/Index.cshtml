@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="panel-container">
+                    <div class="panel-container prizes-container">
                         <h1>
                             <svg class="ico-cup">
                                 <use xlink:href="#cup"></use>
@@ -81,7 +81,7 @@
                                     </mark>
                                     <mark v-else>
                                         {{recipient.recipientLabel}}
-                                        <span class="reward-price-label"> In-Game Rewards worth £{{recipient.proportion.sellingPrice}} </span>
+                                        <span class="reward-price-label"> <span class="in-game-rewards-label">In-Game Rewards worth </span>£{{recipient.proportion.sellingPrice}} </span>
 
                                     </mark>
                                 </li>

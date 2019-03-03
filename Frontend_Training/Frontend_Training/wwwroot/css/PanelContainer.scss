@@ -1,12 +1,21 @@
 ﻿.panel-container {
     position: relative;
     width: 415px;
-    height: 500px;
     background: linear-gradient(to bottom, #3a404d, #181c26);
     border-radius: 10px;
     box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
     z-index: 40;
     color: white;
+
+
+    &.prizes-container {
+        padding-bottom: 15px;
+
+        .in-game-rewards-label {
+            color: rgb(242, 104, 86);
+            font-size:12px;
+        }
+    }
 
     .player-number {
         float: right;
@@ -26,7 +35,7 @@
 
         .reward-price-label {
             float: right;
-            margin-right:80px;
+            margin-right: 80px;
         }
     }
 
