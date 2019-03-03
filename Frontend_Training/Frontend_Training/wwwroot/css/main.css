@@ -218,6 +218,9 @@
             cursor: pointer;
             margin-right: 5px; }
 
+[v-cloak] {
+  display: none; }
+
 body {
   padding-top: 50px;
   padding-bottom: 20px;
