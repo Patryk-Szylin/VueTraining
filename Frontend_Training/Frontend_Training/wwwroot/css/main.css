@@ -250,3 +250,5 @@ body {
   .container .entries-container .entry-enterBtn {
     padding: 6px 100px;
     font-size: 24px; }
+  .container .enter-btn {
+    margin-left: 150px; }
