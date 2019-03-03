@@ -59,7 +59,7 @@
 }
 
 //=== Button styling, semi-ignore
-.entry-btn {
+.entry-btn {  
     background: none;
     border: none;
     cursor: pointer;
@@ -67,13 +67,23 @@
     font: 700 1.2rem 'Roboto Slab', sans-serif;
     padding: 1em 2em;
     letter-spacing: 0.05rem;
-    font-size: 24px;
-    width: 240px;
+    font-size: 18px;
+    width: 175px;
     text-align: center;
-    margin-left: 170px;
+    /*margin-left: 170px;*/
 
 
     &:focus {
         outline: 2px dotted #55d7dc;
     }
 }
+
+/*.entry-btn:nth-child(1){
+    margin-right:175px;
+    margin-left: 300px;
+}
+
+.entry-btn:nth-child(2) {
+    margin-right: 175px;
+    margin-left: 300px;
+}*/

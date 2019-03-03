@@ -15,7 +15,12 @@
 
     &-timerContainer {
         display: flex;
-        margin-left: calc(50% - 268px);
+        margin-left: calc(50% - 645px);
+        .clock-mid-section {
+            margin: 0px 240px;
+            display:flex;
+        }
+
     }
 
     &-col {

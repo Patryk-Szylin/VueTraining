@@ -1,10 +1,13 @@
 ﻿import Vue from 'vue';
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
+import { Clock } from "./Clock/Clock";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
 import * as moment from 'moment';
 
+let clock = new Clock();
 let dummyData = new DummyData();
+
 
 var app = new Vue({
     el: '#app',
@@ -77,17 +80,30 @@ $("img").on("mouseleave", function () {
 //https://stackoverflow.com/questions/16129157/countdown-timer-using-moment-js
 
 
-//setInterval(function () {
-//    const end = moment().endOf('day');
-//    const timeLeft = moment(end.diff(moment()));
-//    const formatted = timeLeft.format('HH:mm:ss');
-
-//    $(".clock-hours").text(timeLeft.hour());
-//    $(".clock-minutes").text(timeLeft.minute());
-//    $(".clock-seconds").text(timeLeft.second());
 
 
-//},1000);
+
+
+
+
+setInterval(function () {
+    //const end = moment().endOf('day');
+    //const timeLeft = moment(end.diff(moment()));
+    //const formatted = timeLeft.format('HH:mm:ss');
+    //$(".clock-hours").text(countdown.HOURS);
+    //$(".clock-minutes").text(countdown.MINUTES);
+    //$(".clock-seconds").text(countdown.SECONDS);
+
+    clock.countdown(new Date(2019, 2, 8, 18, 0, 0));
+
+
+    //console.log(countdown.SECONDS);
+
+
+},1000);
+
+
+
 
 function updateTime() {
 

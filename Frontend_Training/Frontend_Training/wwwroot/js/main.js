@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
+import { Clock } from "./Clock/Clock";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
+var clock = new Clock();
 var dummyData = new DummyData();
 var app = new Vue({
     el: '#app',
@@ -62,6 +64,9 @@ $("img").on("mouseleave", function () {
         $(".reward-description").hide();
     });
 });
+setInterval(function () {
+    clock.countdown(new Date(2019, 2, 8, 18, 0, 0));
+}, 1000);
 function updateTime() {
 }
 $(window).on('load', function () {

@@ -2,10 +2,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-@*@Html.Partial("Partials/LeaderBoard")*@
-
-
 <div id="app" class="row">
     <div class="entries-container" v-cloak>
         <div v-for="entry in entriesData">
@@ -21,29 +17,40 @@
                     </div>
                 </div>
                 <div class="clock-timerContainer">
-                    <div class="clock-col clock-startsIn">
-                        <p>Starts in </p>
+                    <div v-if="entriesData != undefined">
+                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Invest</div>
                     </div>
-                    <div class="clock-col">
-                        <h4 class="clock-hours clock-timer"></h4>
-                        <p class="clock-label">
-                            Hours
-                        </p>
-                    </div>
-                    <div class="clock-col">
-                        <h4 class="clock-minutes clock-timer"></h4>
-                        <p class="clock-label">
-                            Minutes
-                        </p>
-                    </div>
-                    <div class="clock-col">
-                        <h4 class="clock-seconds clock-timer"></h4>
-                        <p class="clock-label">
-                            Seconds
-                        </p>
+                    <div class="clock-mid-section">
+                        <div class="clock-col clock-startsIn">
+                            <p>Begins in </p>
+                        </div>
+                        <div class="clock-col">
+                            <h4 class="clock-days clock-timer"></h4>
+                            <p class="clock-label">
+                                Days
+                            </p>
+                        </div>
+                        <div class="clock-col">
+                            <h4 class="clock-hours clock-timer"></h4>
+                            <p class="clock-label">
+                                Hours
+                            </p>
+                        </div>
+                        <div class="clock-col">
+                            <h4 class="clock-minutes clock-timer"></h4>
+                            <p class="clock-label">
+                                Minutes
+                            </p>
+                        </div>
+                        <div class="clock-col">
+                            <h4 class="clock-seconds clock-timer"></h4>
+                            <p class="clock-label">
+                                Seconds
+                            </p>
+                        </div>
                     </div>
                     <div v-if="entriesData != undefined">
-                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Enter</div>
+                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Compete</div>
                     </div>
                 </div>
             </div>
@@ -107,7 +114,7 @@
                                     <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards">
                                         <div>
                                             <div class="reward-thumbnail">
-                                                <img v-bind:src="reward.thumbnail" />
+                                                <img v-bind:src="reward.thumbnail"/>
                                             </div>
                                         </div>
                                         <div class="reward-description">
@@ -119,11 +126,11 @@
                                             </div>
                                             <div class="reward-link-container">
                                                 <span class="reward-link">
-                                                    <img src="~/images/stretch-icon.png" />
+                                                    <img src="~/images/stretch-icon.png"/>
                                                     Preview
                                                 </span>
                                                 <span class="reward-link">
-                                                    <img src="~/images/market-icon.png" />
+                                                    <img src="~/images/market-icon.png"/>
                                                     Market
                                                 </span>
                                             </div>
