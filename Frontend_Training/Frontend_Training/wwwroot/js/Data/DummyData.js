@@ -7,44 +7,52 @@ var rewards = new Array();
 var numberOfDummyRewards = 8;
 var dummyRewards = [
     {
-        name: "Blood Moon Mask",
-        price: 30,
-        thumbnail: "./images/Webp.net-resizeimage.jpg"
+        name: "Virtwist Entertainment Coin",
+        price: 5.99,
+        thumbnail: "./images/Virtwist_Coin_WithTitle.png",
+        rewardType: 'crypto'
     },
     {
         name: "Frozen Prince",
         price: 25,
-        thumbnail: "./images/Webp.net-resizeimage.jpg"
+        thumbnail: "./images/Amumu_InfernalSkin.jpg",
+        rewardType: 'skin'
     },
     {
         name: "Winter Wonder",
         price: 5,
-        thumbnail: "./images/Webp.net-resizeimage.jpg"
+        thumbnail: "./images/Brand_ApocalypticSkin.jpg",
+        rewardType: 'skin'
     },
     {
         name: "Snow Man",
         price: 5,
-        thumbnail: "./images/Webp.net-resizeimage.jpg"
+        thumbnail: "./images/1.png",
+        rewardType: 'skin'
     },
     {
         name: "Ice King",
         price: 40,
-        thumbnail: "./images/instagram-new-filled.png"
+        thumbnail: "./images/Anivia_FestivalQueenSkin.jpg",
+        rewardType: 'skin'
     },
     {
         name: "Ice Queen",
         price: 30,
-        thumbnail: "./images/instagram-new-filled.png"
+        thumbnail: "./images/champion-mastery-panel-2.png",
+        rewardType: 'chest'
     },
     {
         name: "Hextech Queen",
         price: 10,
-        thumbnail: "./images/instagram-new-filled.png"
+        thumbnail: "./images/Hextech_Crafting_Masterwork_Chest.png",
+        rewardType: 'chest'
     },
     {
         name: "Hextech King",
         price: 10,
-        thumbnail: "./images/instagram-new-filled.png"
+        thumbnail: "./images/ashe_hearthseeker.jpg",
+        rewardType: 'skin'
     },
 ];
 var DummyData = (function () {
@@ -59,7 +67,7 @@ var DummyData = (function () {
     DummyData.GetDummyRewards = function () {
         for (var i = 0; i < dummyRewards.length; i++) {
             if (dummyRewards.length > 0) {
-                var newReward = new Reward(dummyRewards[i].name, dummyRewards[i].price, dummyRewards[i].thumbnail);
+                var newReward = new Reward(dummyRewards[i].name, dummyRewards[i].price, dummyRewards[i].thumbnail, dummyRewards[i].rewardType);
                 rewards.push(newReward);
             }
         }
