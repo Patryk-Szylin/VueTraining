@@ -10,18 +10,10 @@
                     <div class="entry-title">
                         <h1>{{entry.date }}</h1>
                     </div>
-                    <div>
-                        <div class="entry-prizePool">
-                            Total prize pool <span class="prize-label">£{{entry.totalPrizePool.toLocaleString()}}</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="clock-timerContainer">
-                    <div v-if="entriesData != undefined">
-                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Invest</div>
-                    </div>
                     <div class="clock-mid-section">
-                        <div class="clock-col clock-startsIn">
+                        <div class="clock-col clock-timer clock-startsIn">
                             <p>Begins in </p>
                         </div>
                         <div class="clock-col">
@@ -48,6 +40,15 @@
                                 Seconds
                             </p>
                         </div>
+                    </div>
+
+                </div>
+                <div class="entry-navbar">
+                    <div v-if="entriesData != undefined">
+                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Invest</div>
+                    </div>
+                    <div class="entry-prizePool">
+                        Total prize pool <span class="prize-label">£{{entry.totalPrizePool.toLocaleString()}}</span>
                     </div>
                     <div v-if="entriesData != undefined">
                         <div v-on:click="addToPlayers()" class="entry-btn draw-border">Compete</div>

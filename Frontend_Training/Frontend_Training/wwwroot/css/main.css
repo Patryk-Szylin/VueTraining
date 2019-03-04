@@ -8,29 +8,30 @@
   margin-left: -250px;
   box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25); }
 
-.clock-info {
-  margin-bottom: 15px; }
-
 .clock-timerContainer {
   display: flex;
-  margin-left: calc(50% - 645px); }
+  margin-left: 28%; }
   .clock-timerContainer .clock-mid-section {
     margin: 0px 240px;
-    display: flex; }
+    display: flex;
+    margin-bottom: 50px; }
+    .clock-timerContainer .clock-mid-section div {
+      font-size: 16px; }
 
 .clock-col {
   text-align: center;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 8px;
+  font-size: 16px;
   min-width: 50px;
   position: relative; }
 
 .clock-startsIn {
-  font-size: 32px;
-  color: #fff; }
+  /*font-size: 32px;*/
+  color: #fff;
+  margin-top: 8px; }
 
 .clock-timer {
-  font-size: 24px;
+  /*font-size: 24px;*/
   color: #fff; }
   .clock-timer:before {
     color: #fff;
@@ -324,12 +325,19 @@ body {
         margin-left:150px;
     }*/ }
   .container .entries-container .entry-title {
-    color: darkorange; }
+    color: #F26856;
+    margin-left: 40%; }
+  .container .entries-container .entry-navbar {
+    display: flex;
+    margin-left: 16%; }
   .container .entries-container .entry-prizePool {
     font-size: 18px;
-    color: #fff; }
+    color: #fff;
+    margin-left: 21%;
+    margin-right: 21%; }
     .container .entries-container .entry-prizePool .prize-label {
-      color: darkorange; }
+      color: #F26856;
+      font-size: 36px; }
   .container .entries-container .entry-enterBtn {
     padding: 6px 100px;
     font-size: 24px; }

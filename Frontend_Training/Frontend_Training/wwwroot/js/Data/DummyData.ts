@@ -7,7 +7,7 @@ import { setTimeout } from "timers";
 import { RewardType } from "../Reward/Reward";
 
 // Objects
-let entry = new Entry("17 March, 2019", 0, new Array<Customer>());
+let entry = new Entry("17 March, 2019 at 18:00", 0, new Array<Customer>());
 let rewards: Array<Reward> = new Array<Reward>();
 
 // Vars

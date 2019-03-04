@@ -27,28 +27,35 @@ body {
 
     .entries-container {
         .entry-title {
-            color: darkorange;
+            color: #F26856;
+            margin-left: 40%;
+        }
+
+        .entry-navbar {
+            display: flex;
+            margin-left: 16%;
         }
 
         .entry-prizePool {
             font-size: 18px;
             color: #fff;
+            margin-left: 21%;
+            margin-right: 21%;
+
 
             .prize-label {
-                color: darkorange;
+                color: #F26856;
+                font-size: 36px;
             }
         }
 
-                     
+
         .entry-enterBtn {
             padding: 6px 100px;
             font-size: 24px;
         }
-
     }
-
     /*.enter-btn {
         margin-left:150px;
     }*/
-
 }

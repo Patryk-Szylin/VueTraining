@@ -2,7 +2,7 @@ import { Customer } from "../Customer/Customer";
 import { Entry } from "../Entry/Entry";
 import { RandomGenerator } from "../Helpers/RandomGenerator";
 import { Reward } from "../Reward/Reward";
-var entry = new Entry("17 March, 2019", 0, new Array());
+var entry = new Entry("17 March, 2019 at 18:00", 0, new Array());
 var rewards = new Array();
 var numberOfDummyRewards = 8;
 var dummyRewards = [
