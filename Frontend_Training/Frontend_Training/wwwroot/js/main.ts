@@ -75,19 +75,22 @@ $("img").on("mouseleave", function () {
 })
 
 $("#openModal").on("click", function () {
-    console.log("jdsjd");
     $("#myModal").css("display", "block");
     $(".modal-fade").css("display", "block");
+    $(".tabContent").css("display", "none");
+    $("#tab-investors").css("display", "block");
 })
 
 $(".modal-button").on("click", function () {
     var value = $(this).data("val");
 
     $(".tabContent").css("display", "none");
+    $(".modal-button").removeClass("selected");
+    $(this).addClass("selected");
     $(`#${value}`).css("display", "block");
 });
 
-$(".modal-close").on("click", function () {
+$("#modal-close").on("click", function () {
     $("#myModal").css("display", "none");
     $(".modal-fade").css("display", "none");
 })

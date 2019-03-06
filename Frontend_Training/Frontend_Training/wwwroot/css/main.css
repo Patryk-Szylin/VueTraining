@@ -62,7 +62,9 @@
     padding-top: 11px;
     margin-right: 80px; }
   .panel-container .players-list {
-    height: 404px; }
+    height: 404px;
+    overflow-y: scroll;
+    overflow-x: hidden; }
   .panel-container .standings-container .no-hover {
     pointer-events: none; }
   .panel-container .standings-container .reward-price-label {
@@ -283,7 +285,7 @@
   cursor: pointer;
   line-height: 1.5;
   font: 700 1.2rem 'Roboto Slab', sans-serif;
-  padding: 1em 2em;
+  padding: 15px 20px;
   letter-spacing: 0.05rem;
   font-size: 18px;
   width: 175px;
@@ -311,21 +313,28 @@
   top: 18%;
   width: 650px;
   margin-top: 15px;
+  border-radius: 5px;
   padding: 15px;
   background: linear-gradient(to bottom, #3a404d, #181c26);
   z-index: 99999; }
   .cont_princ_lists .tabContent {
-    display: none; }
+    display: none;
+    overflow-y: scroll; }
   .cont_princ_lists #tab-players {
     display: block; }
   .cont_princ_lists .modal-tabs {
     display: flex;
     flex-wrap: wrap; }
-    .cont_princ_lists .modal-tabs .modal-close {
-      color: white; }
     .cont_princ_lists .modal-tabs .modal-button {
       margin-right: 15px;
-      color: white; }
+      color: white;
+      padding: 10px;
+      cursor: pointer; }
+      .cont_princ_lists .modal-tabs .modal-button#modal-close {
+        margin-left: 205px; }
+      .cont_princ_lists .modal-tabs .modal-button.selected {
+        border-bottom: 1px solid #F26856;
+        color: #F26856; }
       .cont_princ_lists .modal-tabs .modal-button .ico-cup {
         width: 25px;
         height: 26px;

@@ -1,5 +1,65 @@
-﻿
+﻿@using System.Globalization
 
+
+
+@{
+    List<string> investorNames = new List<string>
+    {
+        "Samuel Schwartz",
+        "Danny Schmidt",
+        "Carolyn Cain",
+        "Iva Gibbs",
+        "Olie Shaw",
+        "Cecelia Byrd",
+        "Larry Aguilar",
+        "Micheal Berry",
+        "Forest",
+        "Thomas Griffith",
+        "James Mills",
+        "Lettie Henry",
+        "Todd Love",
+        "Lenora Peters",
+        "Daniel Murphy",
+        "Eleanor McLaughlin",
+        "Ernest Ortiz",
+        "Tom Gordon",
+        "Alvin Hubbard",
+        "Rebecca Pittman",
+        "Birdie Newton",
+        "Iva McCormick",
+        "Ophelia Summers",
+        "Scott Lopez",
+        "Marie Maxwell",
+        "Steve Baldwin"
+    };
+
+    List<string> playerNames = new List<string>
+    {
+        "Gussie Sandoval",
+        "Bill Harvey",
+        "Willie Allison",
+        "Amelia Casey",
+        "Mae Ross",
+        "Kyle Clarke",
+        "Charles Luna",
+        "Jospehine Nelson",
+        "Tyler Gibbs",
+        "Michael Sulton",
+        "Marie Fitzgerald"
+    };
+
+
+    List<int> listOfSlots = new List<int>
+    {
+        1,
+        2,
+        3,
+        4,
+        5
+    };
+
+
+}
 
 
 
@@ -13,7 +73,7 @@
                     </svg>
                 </div>
                 <div>
-                    Investors
+                    Investors (@(investorNames.Count))
                 </div>
             </div>
             <div class="modal-button" data-val="tab-players">
@@ -23,23 +83,29 @@
                     </svg>
                 </div>
                 <div>
-                    Players
+                    Players (@(playerNames.Count))
                 </div>
             </div>
-            <div class="modal-close">
-                Close
+            <div id="modal-close" class="modal-button">
+                <div class="modal-icon">
+                    <svg class="ico-cup">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </div>
             </div>
         </div>
         <div id="tab-investors" class="tabContent investors-list">
-            @for (int i = 0; i < 3; i++)
+            @for (int i = 0; i < investorNames.Count; i++)
             {
+                Random generator = new Random();
+                var randomSlotNumber = generator.Next(1, listOfSlots.Count - 1);
                 <div class="investor-element list_shopping li_num_0_1">
                     <div class="col_md_1_list">
                         <p>AVAILABLE</p>
                     </div>
                     <div class="col_md_2_list">
-                        <h4>JOHN SMITH</h4>
-                        <p>2 SLOTS</p>
+                        <h4>@investorNames[i]</h4>
+                        <p>HAS <span style="color: #7cfc00;">@randomSlotNumber</span> MORE SLOTS</p>
                     </div>
                     <div class="col_md_3_list">
                         @Html.Partial("Partials/_SubmitButton")
@@ -48,15 +114,18 @@
             }
         </div>
         <div id="tab-players"class="tabContent investors-list">
-            @for (int i = 0; i < 5; i++)
+            @for (int i = 0; i < playerNames.Count; i++)
             {
+                Random generator = new Random();
+                var randomMoney = generator.Next(500, 50000);
+
                 <div class="investor-element list_shopping li_num_0_1">
                     <div class="col_md_1_list">
                         <p>AVAILABLE</p>
                     </div>
                     <div class="col_md_2_list">
-                        <h4>PATRICK SMITH</h4>
-                        <p>2 SLOTS</p>
+                        <h4>@playerNames[i]</h4>
+                        <p> TOTAL EARNINGS - <span style="color: #F26856;">@randomMoney.ToString("C0", CultureInfo.CurrentCulture)</span></p>
                     </div>
                     <div class="col_md_3_list">
                         @Html.Partial("Partials/_SubmitButton")

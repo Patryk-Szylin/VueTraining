@@ -21,29 +21,39 @@
     top: 18%;
     width: 650px;
     margin-top: 15px;
+    border-radius: 5px;
     padding: 15px;
     background: linear-gradient(to bottom, #3a404d, #181c26);
     z-index: 99999;
 
     .tabContent {
         display: none;
+        overflow-y:scroll;
     }
 
     #tab-players {
-        display:block;
+        display: block;
     }
 
     .modal-tabs {
         display: flex;
         flex-wrap: wrap;
 
-        .modal-close {
-            color: white;
-        }
-
         .modal-button {
             margin-right: 15px;
             color: white;
+            padding: 10px;
+            cursor: pointer;
+
+
+            &#modal-close {
+                margin-left:205px;
+            }
+
+            &.selected {
+                border-bottom: 1px solid #F26856;
+                color: #F26856;
+            }
 
             .ico-cup {
                 width: 25px;

@@ -30,6 +30,8 @@
 
     .players-list {
         height: 404px;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     .standings-container {

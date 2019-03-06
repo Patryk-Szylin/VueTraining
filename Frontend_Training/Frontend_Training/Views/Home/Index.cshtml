@@ -16,189 +16,189 @@
                     </div>
                 </div>
                 <div class="clock-timerContainer">
-                        <div class="clock-mid-section">
-                            <div class="clock-col clock-timer clock-startsIn">
-                                <p>Begins in </p>
-                            </div>
-                            <div class="clock-col">
-                                <h4 class="clock-days clock-timer"></h4>
-                                <p class="clock-label">
-                                    Days
-                                </p>
-                            </div>
-                            <div class="clock-col">
-                                <h4 class="clock-hours clock-timer"></h4>
-                                <p class="clock-label">
-                                    Hours
-                                </p>
-                            </div>
-                            <div class="clock-col">
-                                <h4 class="clock-minutes clock-timer"></h4>
-                                <p class="clock-label">
-                                    Minutes
-                                </p>
-                            </div>
-                            <div class="clock-col">
-                                <h4 class="clock-seconds clock-timer"></h4>
-                                <p class="clock-label">
-                                    Seconds
-                                </p>
-                            </div>
+                    <div class="clock-mid-section">
+                        <div class="clock-col clock-timer clock-startsIn">
+                            <p>Begins in </p>
                         </div>
-
+                        <div class="clock-col">
+                            <h4 class="clock-days clock-timer"></h4>
+                            <p class="clock-label">
+                                Days
+                            </p>
+                        </div>
+                        <div class="clock-col">
+                            <h4 class="clock-hours clock-timer"></h4>
+                            <p class="clock-label">
+                                Hours
+                            </p>
+                        </div>
+                        <div class="clock-col">
+                            <h4 class="clock-minutes clock-timer"></h4>
+                            <p class="clock-label">
+                                Minutes
+                            </p>
+                        </div>
+                        <div class="clock-col">
+                            <h4 class="clock-seconds clock-timer"></h4>
+                            <p class="clock-label">
+                                Seconds
+                            </p>
+                        </div>
                     </div>
+
+                </div>
                 <div class="entry-navbar">
                     <div id="openModal" v-if="entriesData != undefined">
-                        <div class="entry-btn draw-border">Exit</div>
+                        <div class="entry-btn draw-border">INVESTMENTS</div>
                     </div>
                     <div class="entry-prizePool">
                         Total prize pool <span class="prize-label">£{{entry.totalPrizePool.toLocaleString()}}</span>
                     </div>
                     <div v-if="entriesData != undefined">
-                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Enter</div>
+                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">COMPETE</div>
                     </div>
                 </div>
             </div>
             <div class="entries-content ">
-                    <div class="col-lg-4">
-                        <div class="panel-container">
-                            <h1>
-                                <svg class="ico-cup">
-                                    <use xlink:href="#people"></use>
-                                </svg>
-                                Participants <span class="player-number"> {{entry.players.length}}</span>
-                            </h1>
-                            <div class="players-list">
-                                <ol>
-                                    <li v-for="player in entry.players">
-                                        <mark>{{player.name}}</mark>
-                                    </li>
-                                </ol>
-                            </div>
+                <div class="col-lg-4">
+                    <div class="panel-container">
+                        <h1>
+                            <svg class="ico-cup">
+                                <use xlink:href="#people"></use>
+                            </svg>
+                            Participants <span class="player-number"> {{entry.players.length}}</span>
+                        </h1>
+                        <div class="players-list">
+                            <ol>
+                                <li v-for="player in entry.players">
+                                    <mark>{{player.name}}</mark>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel-container prizes-container">
+                        <h1>
+                            <svg class="ico-cup">
+                                <use xlink:href="#cup"></use>
+                            </svg>
+                            Prizes
+                        </h1>
+                        <div class="standings-container">
+                            <ol>
+                                <li class="standing-element no-hover elem" v-for="recipient in entry.standings">
+                                    <mark v-if="recipient.proportion > 0">
+                                        {{recipient.recipientLabel}}
+                                        <span class="reward-price-label"> £{{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7).toLocaleString()}}</span>
+
+                                    </mark>
+                                    <mark v-else>
+                                        {{recipient.recipientLabel}}
+                                        <span class="reward-price-label"> <span class="in-game-rewards-label">In-game rewards worth </span>£{{recipient.proportion.sellingPrice}} </span>
+
+                                    </mark>
+                                </li>
+                            </ol>
 
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="panel-container prizes-container">
-                            <h1>
-                                <svg class="ico-cup">
-                                    <use xlink:href="#cup"></use>
-                                </svg>
-                                Prizes
-                            </h1>
-                            <div class="standings-container">
-                                <ol>
-                                    <li class="standing-element no-hover elem" v-for="recipient in entry.standings">
-                                        <mark v-if="recipient.proportion > 0">
-                                            {{recipient.recipientLabel}}
-                                            <span class="reward-price-label"> £{{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7).toLocaleString()}}</span>
-
-                                        </mark>
-                                        <mark v-else>
-                                            {{recipient.recipientLabel}}
-                                            <span class="reward-price-label"> <span class="in-game-rewards-label">In-game rewards worth </span>£{{recipient.proportion.sellingPrice}} </span>
-
-                                        </mark>
-                                    </li>
-                                </ol>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="panel-container rewards-container">
-                            <h1>
-                                <svg class="ico-cup">
-                                    <use xlink:href="#chest"></use>
-                                </svg>
-                                Available rewards
-                            </h1>
-                            <div class=" available-rewards-container">
-                                <div class="available-rewards-popup">
-                                    <div class="reward-instances-container">
-                                        <div class="rewards-type-title">
-                                            <h1>Cryptocurrency</h1>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel-container rewards-container">
+                        <h1>
+                            <svg class="ico-cup">
+                                <use xlink:href="#chest"></use>
+                            </svg>
+                            Available rewards
+                        </h1>
+                        <div class=" available-rewards-container">
+                            <div class="available-rewards-popup">
+                                <div class="reward-instances-container">
+                                    <div class="rewards-type-title">
+                                        <h1>Cryptocurrency</h1>
+                                    </div>
+                                    <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards" v-if="reward.type == 'crypto'">
+                                        <div class="reward-thumbnail">
+                                            <img v-bind:src="reward.thumbnail" />
                                         </div>
-                                        <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards" v-if="reward.type == 'crypto'">
-                                            <div class="reward-thumbnail">
-                                                <img v-bind:src="reward.thumbnail"/>
+                                        <div class="reward-description">
+                                            <div class="reward-title">
+                                                {{reward.name}}
                                             </div>
-                                            <div class="reward-description">
-                                                <div class="reward-title">
-                                                    {{reward.name}}
-                                                </div>
-                                                <div class="reward-value">
-                                                    Valued at: <span class="reward-price"> {{reward.sellingPrice}} </span>
-                                                </div>
-                                                <div class="reward-link-container">
-                                                    <span class="reward-link">
-                                                        <img src="~/images/market-icon.png"/>
-                                                        Market
-                                                    </span>
-                                                </div>
+                                            <div class="reward-value">
+                                                Valued at: <span class="reward-price"> {{reward.sellingPrice}} </span>
+                                            </div>
+                                            <div class="reward-link-container">
+                                                <span class="reward-link">
+                                                    <img src="~/images/market-icon.png" />
+                                                    Market
+                                                </span>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="rewards-type-title">
-                                            <h1>Skins</h1>
+                                    <div class="rewards-type-title">
+                                        <h1>Skins</h1>
+                                    </div>
+                                    <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards" v-if="reward.type == 'skin'">
+                                        <div class="reward-thumbnail">
+                                            <img v-bind:src="reward.thumbnail" />
                                         </div>
-                                        <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards" v-if="reward.type == 'skin'">
-                                            <div class="reward-thumbnail">
-                                                <img v-bind:src="reward.thumbnail"/>
+                                        <div class="reward-description">
+                                            <div class="reward-title">
+                                                {{reward.name}}
                                             </div>
-                                            <div class="reward-description">
-                                                <div class="reward-title">
-                                                    {{reward.name}}
-                                                </div>
-                                                <div class="reward-value">
-                                                    Shop price: £<span class="reward-price"> {{reward.sellingPrice}} </span>
-                                                </div>
-                                                <div class="reward-link-container">
-                                                    <span class="reward-link">
-                                                        <img src="~/images/stretch-icon.png"/>
-                                                        Preview
-                                                    </span>
-                                                    <span class="reward-link">
-                                                        <img src="~/images/market-icon.png"/>
-                                                        Market
-                                                    </span>
-                                                </div>
+                                            <div class="reward-value">
+                                                Shop price: £<span class="reward-price"> {{reward.sellingPrice}} </span>
+                                            </div>
+                                            <div class="reward-link-container">
+                                                <span class="reward-link">
+                                                    <img src="~/images/stretch-icon.png" />
+                                                    Preview
+                                                </span>
+                                                <span class="reward-link">
+                                                    <img src="~/images/market-icon.png" />
+                                                    Market
+                                                </span>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="rewards-type-title">
-                                            <h1>Chests</h1>
+                                    <div class="rewards-type-title">
+                                        <h1>Chests</h1>
+                                    </div>
+                                    <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards" v-if="reward.type == 'chest'">
+                                        <div class="reward-thumbnail">
+                                            <img v-bind:src="reward.thumbnail" />
                                         </div>
-                                        <div class="col-lg-3 reward-instance" v-for="reward in dummyRewards" v-if="reward.type == 'chest'">
-                                            <div class="reward-thumbnail">
-                                                <img v-bind:src="reward.thumbnail"/>
+                                        <div class="reward-description">
+                                            <div class="reward-title">
+                                                {{reward.name}}
                                             </div>
-                                            <div class="reward-description">
-                                                <div class="reward-title">
-                                                    {{reward.name}}
-                                                </div>
-                                                <div class="reward-value">
-                                                    Shop price: £<span class="reward-price"> {{reward.sellingPrice}} </span>
-                                                </div>
-                                                <div class="reward-link-container">
-                                                    <span class="reward-link">
-                                                        <img src="~/images/stretch-icon.png"/>
-                                                        Preview
-                                                    </span>
-                                                    <span class="reward-link">
-                                                        <img src="~/images/market-icon.png"/>
-                                                        Market
-                                                    </span>
-                                                </div>
+                                            <div class="reward-value">
+                                                Shop price: £<span class="reward-price"> {{reward.sellingPrice}} </span>
+                                            </div>
+                                            <div class="reward-link-container">
+                                                <span class="reward-link">
+                                                    <img src="~/images/stretch-icon.png" />
+                                                    Preview
+                                                </span>
+                                                <span class="reward-link">
+                                                    <img src="~/images/market-icon.png" />
+                                                    Market
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
+            </div>
         </div>
 
     </div>
@@ -227,6 +227,18 @@
     </symbol>
 </svg>
 
+<svg style="display: none;">
+    <symbol id="close" x="0px" y="0px"
+            width="25px" height="26px" viewBox="0 0 50 50" enable-background="new 0 0 25 26" xml:space="preserve">
+        <circle style="fill:#F26856;" cx="25" cy="25" r="25"/>
+        <polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="16,34 25,25 34,16 
+	"/>
+        <polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="16,16 25,25 34,34 
+	"/>
+      </symbol>
+</svg>
+
+
 
 <svg style="display: none;">
     <symbol id="cup" x="0px" y="0px"
@@ -249,12 +261,6 @@
 	C17.43,11.638,15.357,14.276,12.5,14.276z M21.215,7.138h-1.452c-0.197,0-0.39,0.024-0.572,0.07v-2.06
 	c0-1.097,0.908-1.99,2.024-1.99c1.117,0,2.025,0.893,2.025,1.99C23.241,6.246,22.333,7.138,21.215,7.138z" />
 
-
-
-
-
-
-
       </symbol>
 </svg>
 
@@ -262,6 +268,8 @@
     <symbol id="chest" x="0px" y="0px"
             width="25px" height="26px" viewBox="0 0 512 512" enable-background="new 0 0 25 26" xml:space="preserve">
 <path fill="#F26856" d="m512 95c0-52.382812-42.617188-95-95-95h-322c-52.382812 0-95 42.617188-95 95v4.914062l81.21875 110.644532c-1.050781.789062-2.25 1.375-3.542969 1.699218-25.300781 6.355469-45.238281 25.363282-53.074219 49.742188h-24.601562v250h512v-250h-24.605469c-8.304687-25.730469-30.109375-45.140625-56.574219-50.5l81.179688-111.621094zm-108.046875 102.4375c-14.125-17.148438-35.429687-27.4375-57.953125-27.4375-7.710938 0-15.324219 1.171875-22.625 3.480469-2.390625.753906-4.863281.027343-6.164062-1.808594-14.054688-19.832031-36.9375-31.671875-61.210938-31.671875-19.726562 0-38.355469 7.601562-52.449219 21.40625-1.804687 1.765625-4.554687 2.101562-6.539062.800781-12.203125-7.984375-26.382813-12.207031-41.011719-12.207031-25.269531 0-45.96875 10.9375-59.46875 30.726562l-51.914062-70.726562h422.925781zm-308.953125-167.4375h322c30.679688 0 56.445312 21.371094 63.234375 50h-448.472656c6.792969-28.632812 32.558593-50 63.238281-50zm387 452h-452v-190h181v90h90v-90h181zm-241-190h30v60h-30zm213.675781-30h-397.378906c6.003906-10.109375 15.871094-17.675781 27.6875-20.644531 13.507813-3.394531 24.460937-13.808594 28.585937-27.175781 6.996094-22.679688 21.269532-34.179688 42.429688-34.179688 8.777344 0 17.277344 2.527344 24.578125 7.308594 13.6875 8.957031 32.175781 7.078125 43.960937-4.464844 8.457032-8.28125 19.628907-12.84375 31.460938-12.84375 14.5625 0 28.292969 7.109375 36.730469 19.019531 8.871093 12.515625 24.824219 17.769531 39.691406 13.066407 4.371094-1.386719 8.9375-2.085938 13.578125-2.085938 15.855469 0 30.71875 8.503906 38.785156 22.1875 6.480469 10.992188 18.375 17.816406 31.039063 17.8125h.042969.132812c16.246094 0 30.757812 8.753906 38.675781 22zm0 0" />
+
+
 
 </symbol>
 </svg>
