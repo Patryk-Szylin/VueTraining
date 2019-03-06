@@ -1,12 +1,24 @@
 ﻿.clock {
     &-container {
-        background-color: #080808;
+        /*background-color: #080808;
         border-radius: 0px 0px 5px 5px;
         padding: 10px;
         width: calc(100% + 500px);
-        margin-left: -250px;
-        box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);
+        margin-left: -250px;*/
+        /*box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);*/
+        .entry-game-logo {
+            img {
+                position: absolute;
+                width: 100px;
+                left: 26%;
+
+                &.logo-title {
+                    top: 185px;
+                }
+            }
+        }
     }
+
 
 
     &-timerContainer {
@@ -15,14 +27,13 @@
 
         .clock-mid-section {
             margin: 0px 240px;
-            display:flex;
+            display: flex;
             margin-bottom: 50px;
 
             div {
                 font-size: 16px;
             }
         }
-
     }
 
     &-col {

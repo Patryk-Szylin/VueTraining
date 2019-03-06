@@ -1,11 +1,17 @@
 ﻿/*@import "Leaderboard.scss";*/
 .clock-container {
-  background-color: #080808;
-  border-radius: 0px 0px 5px 5px;
-  padding: 10px;
-  width: calc(100% + 500px);
-  margin-left: -250px;
-  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25); }
+  /*background-color: #080808;
+        border-radius: 0px 0px 5px 5px;
+        padding: 10px;
+        width: calc(100% + 500px);
+        margin-left: -250px;*/
+  /*box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);*/ }
+  .clock-container .entry-game-logo img {
+    position: absolute;
+    width: 100px;
+    left: 26%; }
+    .clock-container .entry-game-logo img.logo-title {
+      top: 185px; }
 
 .clock-timerContainer {
   display: flex;
@@ -287,7 +293,7 @@
   font: 700 1.2rem 'Roboto Slab', sans-serif;
   padding: 15px 20px;
   letter-spacing: 0.05rem;
-  font-size: 18px;
+  font-size: 12px;
   width: 175px;
   text-align: center; }
   .entry-btn:focus {
@@ -477,6 +483,13 @@ body {
   /*.enter-btn {
         margin-left:150px;
     }*/ }
+  .container .entry-header {
+    background-color: #080808;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px;
+    width: calc(100% + 500px);
+    margin-left: -250px;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25); }
   .container .entries-container .entry-title {
     color: #F26856;
     margin-left: 40%; }

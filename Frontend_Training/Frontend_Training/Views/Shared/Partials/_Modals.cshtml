@@ -108,7 +108,7 @@
                         <p>HAS <span style="color: #7cfc00;">@randomSlotNumber</span> MORE SLOTS</p>
                     </div>
                     <div class="col_md_3_list">
-                        @Html.Partial("Partials/_SubmitButton")
+                        @Html.Partial("Partials/_SubmitButton", "APPLY")
                     </div>
                 </div>
             }
@@ -128,7 +128,7 @@
                         <p> TOTAL EARNINGS - <span style="color: #F26856;">@randomMoney.ToString("C0", CultureInfo.CurrentCulture)</span></p>
                     </div>
                     <div class="col_md_3_list">
-                        @Html.Partial("Partials/_SubmitButton")
+                        @Html.Partial("Partials/_SubmitButton", "SEND REQUEST")
                     </div>
                 </div>
             }
