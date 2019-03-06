@@ -73,8 +73,18 @@ $("img").on("mouseleave", function () {
     $(this).closest(".reward-instance").on("mouseleave", () => {
         $(".reward-description").hide();
     })
+})
+
+$(".modal-button").on("click", function () {
+    var value = $(this).data("val");
+    console.log(value);
+
+    $(".tabContent").css("display", "none");
+
+    $(`#${value}`).css("display", "block");
 
 })
+
 
 // Countdown
 //https://stackoverflow.com/questions/16129157/countdown-timer-using-moment-js

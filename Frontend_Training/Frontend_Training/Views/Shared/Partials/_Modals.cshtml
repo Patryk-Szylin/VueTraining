@@ -1,0 +1,70 @@
+﻿
+
+
+
+
+<div class="cont_principal">
+    <div class="cont_princ_lists">
+        <div class="modal-tabs">
+            <div class="modal-button" data-val="tab-investors">
+                <div class="modal-icon">
+                    <svg class="ico-cup">
+                        <use xlink:href="#people"></use>
+                    </svg>
+                </div>
+                <div>
+                    Investors
+                </div>
+            </div>
+            <div class="modal-button" data-val="tab-players">
+                <div class="modal-icon">
+                    <svg class="ico-cup">
+                        <use xlink:href="#people"></use>
+                    </svg>
+                </div>
+                <div>
+                    Players
+                </div>
+            </div>
+        </div>
+        <div id="tab-investors" class="tabContent investors-list">
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="investor-element list_shopping li_num_0_1">
+                    <div class="col_md_1_list">
+                        <p>AVAILABLE</p>
+                    </div>
+                    <div class="col_md_2_list">
+                        <h4>JOHN SMITH</h4>
+                        <p>2 SLOTS</p>
+                    </div>
+                    <div class="col_md_3_list">
+                        <div class="cont_text_date">
+                            <p>REQUEST</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="tab-players"class="tabContent investors-list">
+            @for (int i = 0; i < 5; i++)
+            {
+                <div class="investor-element list_shopping li_num_0_1">
+                    <div class="col_md_1_list">
+                        <p>AVAILABLE</p>
+                    </div>
+                    <div class="col_md_2_list">
+                        <h4>PATRICK SMITH</h4>
+                        <p>2 SLOTS</p>
+                    </div>
+                    <div class="col_md_3_list">
+                        <div class="cont_text_date">
+                            <p>REQUEST</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

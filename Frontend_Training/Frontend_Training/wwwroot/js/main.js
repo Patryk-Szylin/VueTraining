@@ -64,6 +64,12 @@ $("img").on("mouseleave", function () {
         $(".reward-description").hide();
     });
 });
+$(".modal-button").on("click", function () {
+    var value = $(this).data("val");
+    console.log(value);
+    $(".tabContent").css("display", "none");
+    $("#" + value).css("display", "block");
+});
 setInterval(function () {
     clock.countdown(new Date(2019, 2, 8, 18, 0, 0));
 }, 1000);

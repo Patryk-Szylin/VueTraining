@@ -2,6 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
+@Html.Partial("Partials/_Modals")
+
 <div id="app" class="row">
     <div class="entries-container" v-cloak>
         <div v-for="entry in entriesData">
@@ -11,7 +13,7 @@
                         <h1>{{entry.date }}</h1>
                     </div>
                 </div>
-                <div class="clock-timerContainer">
+                @*<div class="clock-timerContainer">
                     <div class="clock-mid-section">
                         <div class="clock-col clock-timer clock-startsIn">
                             <p>Begins in </p>
@@ -42,20 +44,20 @@
                         </div>
                     </div>
 
-                </div>
+                </div>*@
                 <div class="entry-navbar">
                     <div v-if="entriesData != undefined">
-                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Invest</div>
+                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Exit</div>
                     </div>
                     <div class="entry-prizePool">
                         Total prize pool <span class="prize-label">£{{entry.totalPrizePool.toLocaleString()}}</span>
                     </div>
                     <div v-if="entriesData != undefined">
-                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Compete</div>
+                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Enter</div>
                     </div>
                 </div>
             </div>
-            <div class="entries-content ">
+            @*<div class="entries-content ">
                 <div class="col-lg-4">
                     <div class="panel-container">
                         <h1>
@@ -194,7 +196,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
 
     </div>
