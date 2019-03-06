@@ -3,7 +3,7 @@
 
 
 
-<div class="cont_principal">
+<div id="myModal" class="cont_principal">
     <div class="cont_princ_lists">
         <div class="modal-tabs">
             <div class="modal-button" data-val="tab-investors">
@@ -25,6 +25,9 @@
                 <div>
                     Players
                 </div>
+            </div>
+            <div class="modal-close">
+                Close
             </div>
         </div>
         <div id="tab-investors" class="tabContent investors-list">
@@ -56,13 +59,10 @@
                         <p>2 SLOTS</p>
                     </div>
                     <div class="col_md_3_list">
-                        <div class="cont_text_date">
-                            <p>REQUEST</p>
-                        </div>
+                        @Html.Partial("Partials/_SubmitButton")
                     </div>
                 </div>
             }
         </div>
-
     </div>
 </div>

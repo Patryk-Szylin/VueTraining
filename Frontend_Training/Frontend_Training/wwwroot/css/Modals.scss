@@ -1,20 +1,45 @@
-﻿.cont_princ_lists {
-    position: relative;
-    float: left;
-    width: 45%;
+﻿
+.modal-fade {
+    position: fixed;
+    top: 0;
+    right:0;
+    bottom: 0;
+    left: 0;
+    background-color:#000;
+    z-index: 2000;
+    opacity:0.8;
+    display: none;
+}
+
+#myModal {
+    display:none;
+}
+
+.cont_princ_lists {
+    position: absolute;
+    left: 33%;
+    top: 18%;
+    width: 650px;
     margin-top: 15px;
     padding: 15px;
     background: linear-gradient(to bottom, #3a404d, #181c26);
-
-
+    z-index: 99999;
 
     .tabContent {
         display: none;
     }
 
+    #tab-players {
+        display:block;
+    }
+
     .modal-tabs {
         display: flex;
         flex-wrap: wrap;
+
+        .modal-close {
+            color: white;
+        }
 
         .modal-button {
             margin-right: 15px;
@@ -86,7 +111,7 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 14px;
             font-weight: 700;
-            color: wi
+            color: white;
         }
 
         p {

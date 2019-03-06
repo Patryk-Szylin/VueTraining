@@ -3,11 +3,10 @@
 }
 
 @Html.Partial("Partials/_Modals")
-
+<div class="modal-fade"></div>
 
 
 <div id="app" class="row">
-
     <div class="entries-container" v-cloak>
         <div v-for="entry in entriesData">
             <div class="clock-container">
@@ -16,7 +15,7 @@
                         <h1>{{entry.date }}</h1>
                     </div>
                 </div>
-                @*<div class="clock-timerContainer">
+                <div class="clock-timerContainer">
                         <div class="clock-mid-section">
                             <div class="clock-col clock-timer clock-startsIn">
                                 <p>Begins in </p>
@@ -47,10 +46,10 @@
                             </div>
                         </div>
 
-                    </div>*@
+                    </div>
                 <div class="entry-navbar">
-                    <div v-if="entriesData != undefined">
-                        <div v-on:click="addToPlayers()" class="entry-btn draw-border">Exit</div>
+                    <div id="openModal" v-if="entriesData != undefined">
+                        <div class="entry-btn draw-border">Exit</div>
                     </div>
                     <div class="entry-prizePool">
                         Total prize pool <span class="prize-label">£{{entry.totalPrizePool.toLocaleString()}}</span>
@@ -60,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            @*<div class="entries-content ">
+            <div class="entries-content ">
                     <div class="col-lg-4">
                         <div class="panel-container">
                             <h1>
@@ -199,7 +198,7 @@
 
                         </div>
                     </div>
-                </div>*@
+                </div>
         </div>
 
     </div>

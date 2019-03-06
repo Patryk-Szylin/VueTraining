@@ -1,60 +1,45 @@
 ﻿/*@import "Leaderboard.scss";*/
-/*.clock {
-    &-container {
-        background-color: #080808;
-        border-radius: 0px 0px 5px 5px;
-        padding: 10px;
-        width: calc(100% + 500px);
-        margin-left: -250px;
-        box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);
-    }
+.clock-container {
+  background-color: #080808;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
+  width: calc(100% + 500px);
+  margin-left: -250px;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25); }
 
+.clock-timerContainer {
+  display: flex;
+  margin-left: 28%; }
+  .clock-timerContainer .clock-mid-section {
+    margin: 0px 240px;
+    display: flex;
+    margin-bottom: 50px; }
+    .clock-timerContainer .clock-mid-section div {
+      font-size: 16px; }
 
-    &-timerContainer {
-        display: flex;
-        margin-left: 28%;
+.clock-col {
+  text-align: center;
+  margin-right: 8px;
+  font-size: 16px;
+  min-width: 50px;
+  position: relative; }
 
-        .clock-mid-section {
-            margin: 0px 240px;
-            display:flex;
-            margin-bottom: 50px;
+.clock-startsIn {
+  color: #fff;
+  margin-top: 8px; }
 
-            div {
-                font-size: 16px;
-            }
-        }
+.clock-timer {
+  color: #fff; }
+  .clock-timer:before {
+    color: #fff;
+    font-size: 4.2rem;
+    text-transform: uppercase; }
 
-    }
+.clock-label {
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  font-size: 12px; }
 
-    &-col {
-        text-align: center;
-        margin-right: 8px;
-        font-size: 16px;
-        min-width: 50px;
-        position: relative;
-    }
-
-    &-startsIn {
-        color: #fff;
-        margin-top: 8px;
-    }
-
-    &-timer {
-        color: #fff;
-
-        &:before {
-            color: #fff;
-            font-size: 4.2rem;
-            text-transform: uppercase;
-        }
-    }
-
-    &-label {
-        color: rgba(255,255,255,.35);
-        text-transform: uppercase;
-        font-size: 12px;
-    }
-}*/
 .panel-container {
   position: relative;
   /*width: 415px;*/
@@ -306,18 +291,38 @@
   .entry-btn:focus {
     outline: 2px dotted #55d7dc; }
 
+.modal-fade {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 2000;
+  opacity: 0.8;
+  display: none; }
+
+#myModal {
+  display: none; }
+
 .cont_princ_lists {
-  position: relative;
-  float: left;
-  width: 45%;
+  position: absolute;
+  left: 33%;
+  top: 18%;
+  width: 650px;
   margin-top: 15px;
   padding: 15px;
-  background: linear-gradient(to bottom, #3a404d, #181c26); }
+  background: linear-gradient(to bottom, #3a404d, #181c26);
+  z-index: 99999; }
   .cont_princ_lists .tabContent {
     display: none; }
+  .cont_princ_lists #tab-players {
+    display: block; }
   .cont_princ_lists .modal-tabs {
     display: flex;
     flex-wrap: wrap; }
+    .cont_princ_lists .modal-tabs .modal-close {
+      color: white; }
     .cont_princ_lists .modal-tabs .modal-button {
       margin-right: 15px;
       color: white; }
@@ -370,7 +375,7 @@
       font-family: 'Open Sans', sans-serif;
       font-size: 14px;
       font-weight: 700;
-      color: wi; }
+      color: white; }
     .cont_princ_lists .col_md_2_list p {
       text-align: left;
       font-family: 'Open Sans', sans-serif;

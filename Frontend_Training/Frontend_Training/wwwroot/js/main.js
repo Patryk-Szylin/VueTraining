@@ -64,10 +64,19 @@ $("img").on("mouseleave", function () {
         $(".reward-description").hide();
     });
 });
+$("#openModal").on("click", function () {
+    console.log("jdsjd");
+    $("#myModal").css("display", "block");
+    $(".modal-fade").css("display", "block");
+});
 $(".modal-button").on("click", function () {
     var value = $(this).data("val");
     $(".tabContent").css("display", "none");
     $("#" + value).css("display", "block");
+});
+$(".modal-close").on("click", function () {
+    $("#myModal").css("display", "none");
+    $(".modal-fade").css("display", "none");
 });
 setInterval(function () {
     clock.countdown(new Date(2019, 2, 8, 18, 0, 0));
