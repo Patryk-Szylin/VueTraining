@@ -66,7 +66,6 @@ $("img").on("mouseleave", function () {
 });
 $(".modal-button").on("click", function () {
     var value = $(this).data("val");
-    console.log(value);
     $(".tabContent").css("display", "none");
     $("#" + value).css("display", "block");
 });

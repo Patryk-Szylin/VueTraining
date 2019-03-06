@@ -302,20 +302,10 @@
   letter-spacing: 0.05rem;
   font-size: 18px;
   width: 175px;
-  text-align: center;
-  /*margin-left: 170px;*/ }
+  text-align: center; }
   .entry-btn:focus {
     outline: 2px dotted #55d7dc; }
 
-/*.entry-btn:nth-child(1){
-    margin-right:175px;
-    margin-left: 300px;
-}
-
-.entry-btn:nth-child(2) {
-    margin-right: 175px;
-    margin-left: 300px;
-}*/
 .cont_princ_lists {
   position: relative;
   float: left;
@@ -323,13 +313,6 @@
   margin-top: 15px;
   padding: 15px;
   background: linear-gradient(to bottom, #3a404d, #181c26); }
-  .cont_princ_lists svg {
-    width: 25px;
-    height: 26px;
-    position: relative;
-    top: 3px;
-    margin-right: 6px;
-    vertical-align: baseline; }
   .cont_princ_lists .tabContent {
     display: none; }
   .cont_princ_lists .modal-tabs {
@@ -338,6 +321,13 @@
     .cont_princ_lists .modal-tabs .modal-button {
       margin-right: 15px;
       color: white; }
+      .cont_princ_lists .modal-tabs .modal-button .ico-cup {
+        width: 25px;
+        height: 26px;
+        position: relative;
+        top: 3px;
+        margin-right: 6px;
+        vertical-align: baseline; }
       .cont_princ_lists .modal-tabs .modal-button div {
         display: inline-block; }
       .cont_princ_lists .modal-tabs .modal-button .modal-icon {
@@ -348,6 +338,7 @@
       position: relative;
       float: left;
       width: 100%;
+      /*border: 1px solid white;*/
       height: 75px;
       left: 0;
       /*background-color: #F1F1EF;*/
@@ -367,7 +358,8 @@
     .cont_princ_lists .col_md_1_list p {
       font-family: 'Open Sans', sans-serif;
       font-size: 14px;
-      font-weight: 700; }
+      font-weight: 700;
+      margin-left: 10px; }
   .cont_princ_lists .col_md_2_list {
     width: 250px;
     position: relative;
@@ -377,7 +369,8 @@
       text-align: left;
       font-family: 'Open Sans', sans-serif;
       font-size: 14px;
-      font-weight: 700; }
+      font-weight: 700;
+      color: wi; }
     .cont_princ_lists .col_md_2_list p {
       text-align: left;
       font-family: 'Open Sans', sans-serif;
@@ -391,6 +384,10 @@
     height: 14px;
     top: 50%;
     margin-top: -10px; }
+    .cont_princ_lists .col_md_3_list .entry-btn {
+      font-size: 12px; }
+      .cont_princ_lists .col_md_3_list .entry-btn.draw-border {
+        box-shadow: inset 0 0 0 2px #F26856; }
     .cont_princ_lists .col_md_3_list .cont_text_date {
       text-align: right;
       font-family: 'Open Sans', sans-serif;
@@ -413,8 +410,8 @@
   z-index: 1; }
 
 .list_shopping > .col_md_1_list {
-  border-left: 4px solid #e45;
-  color: #e45; }
+  border-left: 4px solid #7cfc00;
+  color: #7cfc00; }
 
 .list_work > .col_md_1_list {
   border-left: 4px solid #2A476B;
@@ -432,6 +429,20 @@
   opacity: 0.3;
   margin: 15px 0px;
   z-index: 1; }
+
+.submit-button {
+  background-color: #3e3f4c;
+  width: 220px;
+  height: 60px;
+  border-radius: 60px;
+  color: #1fcd97;
+  cursor: pointer;
+  text-align: center;
+  border: solid 5px #1fcd97; }
+  .submit-button p {
+    font-size: 20px;
+    margin: 0;
+    padding-top: 16px; }
 
 [v-cloak] {
   display: none; }
