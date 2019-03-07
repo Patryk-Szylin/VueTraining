@@ -71,22 +71,57 @@
     height: 404px;
     overflow-y: scroll;
     overflow-x: hidden; }
+  .panel-container .standings-container .no-recipients {
+    color: #7cfc00;
+    font-size: 12px;
+    position: absolute;
+    right: 30px; }
   .panel-container .standings-container .no-hover {
     pointer-events: none; }
   .panel-container .standings-container .reward-price-label {
     float: right;
     margin-right: 80px; }
+  .panel-container .info-pop-up {
+    display: none;
+    background-color: #fa6855;
+    position: absolute;
+    top: 90px;
+    width: 300px;
+    z-index: 9;
+    right: 55px;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    -webkit-box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75); }
+    .panel-container .info-pop-up:after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      transform: rotate(-45deg);
+      background: #fa6855;
+      position: absolute;
+      /*box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);*/
+      z-index: -1;
+      top: 30px;
+      right: -3%; }
+  .panel-container svg {
+    width: 25px;
+    height: 26px;
+    position: relative;
+    top: 3px;
+    margin-right: 6px;
+    vertical-align: baseline; }
+    .panel-container svg#question {
+      cursor: pointer;
+      top: -50px;
+      float: right;
+      right: 14px; }
   .panel-container h1 {
     font-size: 18px;
     color: #e1e1e1;
     padding: 12px 13px 18px; }
-    .panel-container h1 svg {
-      width: 25px;
-      height: 26px;
-      position: relative;
-      top: 3px;
-      margin-right: 6px;
-      vertical-align: baseline; }
   .panel-container ol {
     padding: 0px !important;
     list-style-type: none; }
@@ -220,7 +255,7 @@
           width: 80px;
           height: 80px; }
         .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance .reward-description {
-          background-color: #fa6855;
+          background-color: #00ABA7;
           display: none;
           position: absolute;
           top: 95px;
@@ -229,7 +264,7 @@
           left: -45px;
           border-radius: 5px;
           padding: 5px;
-          color: #fff;
+          color: #000;
           -webkit-box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75);
           box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75); }
@@ -238,16 +273,19 @@
             width: 20px;
             height: 20px;
             transform: rotate(-45deg);
-            background: #fa6855;
+            background: #00ABA7;
             position: absolute;
             /*box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);*/
             z-index: -1;
             top: -10px;
             left: calc(50% - 10px); }
+          .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance .reward-description .reward-title {
+            color: #5646a3; }
           .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance .reward-description .reward-value {
             margin-bottom: 10px; }
             .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance .reward-description .reward-value .reward-price {
-              color: #fff; }
+              color: #5646a3;
+              font-weight: bold; }
           .available-rewards-container .available-rewards-popup .reward-instances-container .reward-instance .reward-description .reward-link-container .reward-link {
             cursor: pointer;
             margin-right: 5px; }

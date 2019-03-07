@@ -81,6 +81,16 @@ $("#openModal").on("click", function () {
     $("#tab-investors").css("display", "block");
 })
 
+$("#question").on("mouseenter", function () {
+    $(".info-pop-up").css("display", "block");
+});
+
+$("#question").on("mouseleave", function () {
+    console.log("jdsajdi");
+    $(".info-pop-up").css("display", "none");
+});
+
+
 $(".modal-button").on("click", function () {
     var value = $(this).data("val");
 
