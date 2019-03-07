@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { DummyData } from "./Data/DummyData";
 import { Customer } from "./Customer/Customer";
 import { Clock } from "./Clock/Clock";
+import { DummyPrizeData } from "./Data/DummyPrizesData";
 import { RandomGenerator } from "../js/Helpers/RandomGenerator";
 var clock = new Clock();
 var dummyData = new DummyData();
@@ -9,8 +10,9 @@ var app = new Vue({
     el: '#app',
     data: {
         entriesData: dummyData.entries,
-        totalPrizePool: dummyData.entries[0].totalPrizePool,
+        totalPrizePool: 75000000,
         dummyRewards: DummyData.GetDummyRewards(),
+        prizeMockData: DummyPrizeData.getMockData(),
         paf: './images/instagram-new-filled.png'
     },
     methods: {

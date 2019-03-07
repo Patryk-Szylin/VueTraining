@@ -58,7 +58,7 @@
                         <div class="entry-btn draw-border">INVESTMENTS</div>
                     </div>
                     <div class="entry-prizePool">
-                        Total prize pool <span class="prize-label">£{{entry.totalPrizePool.toLocaleString()}}</span>
+                        Total prize pool <span class="prize-label">£{{totalPrizePool.toLocaleString()}}</span>
                     </div>
                     <div v-if="entriesData != undefined">
                         <div v-on:click="addToPlayers()" class="entry-btn draw-border">COMPETE</div>
@@ -112,22 +112,22 @@
 
                         <div class="standings-container">
                             <ol>
-                                <li class="standing-element no-hover elem" v-for="recipient in entry.standings">
-                                    <mark v-if="recipient.proportion > 0">
-                                        {{recipient.recipientLabel}}
+                                <li class="standing-element no-hover elem" v-for="recipient in prizeMockData">
+                                    <mark v-if="recipient.subLabel == undefined">
+                                        {{recipient.label}}
                                         <span class="reward-price-label">
-                                            £{{Math.round((entry.totalPrizePool / recipient.noRecipients) * recipient.proportion / 7).toLocaleString()}}
+                                            £{{recipient.prize.toLocaleString()}}
                                         </span>
                                         <span class="no-recipients">
                                             {{recipient.noRecipients}}
                                         </span>
-
-
                                     </mark>
                                     <mark v-else>
-                                        {{recipient.recipientLabel}}
-                                        <span class="reward-price-label"> <span class="in-game-rewards-label">In-game rewards worth </span>£{{recipient.proportion.sellingPrice}} </span>
-
+                                        {{recipient.label}}
+                                        <span class="reward-price-label"> <span class="in-game-rewards-label">In-game rewards worth </span>£{{recipient.prize}} </span>
+                                        <span class="no-recipients">
+                                            {{recipient.noRecipients}}
+                                        </span>
                                     </mark>
                                 </li>
                             </ol>

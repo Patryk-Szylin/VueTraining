@@ -6,7 +6,6 @@ var Entry = (function () {
         this.addPlayerToBracket = function (player) {
             this.players.unshift(player);
             this.generateBracketSize();
-            this.generatePrizePool();
             this.generateStandings(this.standings);
         };
         this.generatePrizePool = function () {
@@ -17,7 +16,7 @@ var Entry = (function () {
             });
         };
         this.generateBracketSize = function () {
-            if (this.bracketSize < this.players.length) {
+            if (this.bracketSize < 1500000) {
                 this.bracketSize = this.bracketSize * 2;
                 this.generateBracketSize();
             }
@@ -42,6 +41,10 @@ var Entry = (function () {
             labels[16384] = { label: "Round-32768", players: 16384 };
             labels[32768] = { label: "Round-65536", players: 32768 };
             labels[65536] = { label: "Round-131072", players: 65536 };
+            labels[131072] = { label: "Round-262144", players: 131072 };
+            labels[262144] = { label: "Round-524288", players: 262144 };
+            labels[524288] = { label: "Round-1048576", players: 524288 };
+            labels[1048576] = { label: "Round-2097152", players: 1048576 };
             var recipientsForEachBracket = this.bracketSize / 2;
             if (recipientsForEachBracket == 1) {
                 var labelExistance = standings.find(function (label) { return label.recipientLabel == labels[recipientsForEachBracket].label; });
