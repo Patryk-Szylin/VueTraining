@@ -17,7 +17,7 @@ var app = new Vue({
     data: {
         entriesData: dummyData.entries,
         //totalPrizePool: dummyData.entries[0].totalPrizePool,
-        totalPrizePool: 75000000,
+        totalPrizePool: 53055000,
         dummyRewards: DummyData.GetDummyRewards(),
         prizeMockData: DummyPrizeData.getMockData(),
         paf: './images/instagram-new-filled.png'
