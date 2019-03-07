@@ -83,7 +83,7 @@
     margin-right: 80px; }
   .panel-container .info-pop-up {
     display: none;
-    background-color: #fa6855;
+    background-color: #00ABA7;
     position: absolute;
     top: 90px;
     width: 300px;
@@ -91,7 +91,7 @@
     right: 55px;
     border-radius: 5px;
     padding: 10px;
-    color: #fff;
+    color: #000;
     -webkit-box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 18px -12px rgba(0, 0, 0, 0.75); }
@@ -100,7 +100,7 @@
       width: 20px;
       height: 20px;
       transform: rotate(-45deg);
-      background: #fa6855;
+      background: #00ABA7;
       position: absolute;
       /*box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);*/
       z-index: -1;
