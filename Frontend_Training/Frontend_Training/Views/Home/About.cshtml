@@ -1,7 +1,89 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿@using System.Globalization
+@using Microsoft.CodeAnalysis.Emit
+@model List<GameInstance>;
 
-<p>Use this area to provide additional information.</p>
+@{
+    List<string> investorNames = new List<string>
+     {
+         "Samuel Schwartz",
+         "Danny Schmidt",
+         "Carolyn Cain",
+         "Iva Gibbs",
+         "Olie Shaw",
+         "Cecelia Byrd",
+         "Larry Aguilar",
+         "Micheal Berry",
+         "Forest",
+         "Thomas Griffith",
+         "James Mills",
+         "Lettie Henry",
+         "Todd Love",
+         "Lenora Peters",
+         "Daniel Murphy",
+         "Eleanor McLaughlin",
+         "Ernest Ortiz",
+         "Tom Gordon",
+         "Alvin Hubbard",
+         "Rebecca Pittman",
+         "Birdie Newton",
+         "Iva McCormick",
+         "Ophelia Summers",
+         "Scott Lopez",
+         "Marie Maxwell",
+         "Steve Baldwin"
+     };
+
+    List<string> playerNames = new List<string>
+     {
+         "Gussie Sandoval",
+         "Bill Harvey",
+         "Willie Allison",
+         "Amelia Casey",
+         "Mae Ross",
+         "Kyle Clarke",
+         "Charles Luna",
+         "Jospehine Nelson",
+         "Tyler Gibbs",
+         "Michael Sulton",
+         "Marie Fitzgerald"
+     };
+
+
+    List<int> listOfSlots = new List<int>
+     {
+         1,
+         2,
+         3,
+         4,
+         5
+     };
+
+
+
+}
+
+
+
+<div id="landingPage">
+
+    <div class="cont_princ_lists">
+        <h2 style="color: white; text-align: center">List of games using our platform</h2>
+        <div id="tab-players" class="tabContent investors-list">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="investor-element li_num_0_1">
+                    <div class="col_md_1_list">
+                        <img src="@Model[i].link">
+                    </div>
+                    <div class="col_md_2_list">
+                        <h4>@Model[i].gameName</h4>
+                        <p> @Model[i].companyName</p>
+                    </div>
+                    <div class="col_md_3_list">
+                        @Html.Partial("Partials/_SubmitButton", "VISIT")
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

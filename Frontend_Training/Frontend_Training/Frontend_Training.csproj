@@ -8,6 +8,7 @@
   <ItemGroup>
     <Content Remove="wwwroot\js\Customer\Customer.ts" />
     <Content Remove="wwwroot\js\Data\DummyData.ts" />
+    <Content Remove="wwwroot\js\Data\DummyPrizesData.ts" />
     <Content Remove="wwwroot\js\Data\RewardsData.ts" />
     <Content Remove="wwwroot\js\Entry\Entry.ts" />
     <Content Remove="wwwroot\js\Helpers\RandomGenerator.ts" />
@@ -24,6 +25,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\js\Customer\Customer.ts" />
     <TypeScriptCompile Include="wwwroot\js\Data\DummyData.ts" />
+    <TypeScriptCompile Include="wwwroot\js\Data\DummyPrizesData.ts" />
     <TypeScriptCompile Include="wwwroot\js\Data\RewardsData.ts" />
     <TypeScriptCompile Include="wwwroot\js\Entry\Entry.ts" />
     <TypeScriptCompile Include="wwwroot\js\Helpers\RandomGenerator.ts" />
